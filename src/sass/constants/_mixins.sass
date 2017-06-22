@@ -1,0 +1,25 @@
+=breakpoint($breakpoint)
+	@media screen and (max-width: $breakpoint)
+		@content
+=breakpoint-min($breakpoint)
+	@media screen and (min-width: $breakpoint)
+		@content
+=placeholder
+	&::-webkit-input-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+=clearfix
+	&:after
+		content: ""
+		display: table
+		clear: both
+=align-img-center
+	background-position: center center
+	-webkit-background-size: cover
+	background-size: cover
+	background-repeat: no-repeat
