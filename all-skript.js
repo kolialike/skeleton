@@ -36,14 +36,18 @@ jQuery(function($){
   $('.slider-content').on('mouseover',function() { swipers.stopAutoplay(); }); $('.slider-content').on('mouseout',function() { swipers.startAutoplay(); });
 
   //Табы по индексу
-  var institutionSmallPictures = $(".institution-small-pictures").find("a");
-  var institutionBigPictures = $(".institution-big-pictures").find("img");
-  institutionSmallPictures.on('click', function(event) {
-      event.preventDefault();
-      $(this).addClass('active').siblings().removeClass('active');
-      var index = institutionSmallPictures.index($(this));
-      institutionBigPictures.eq(index).addClass('active').siblings().removeClass('active');    
-  });
+    function createTabs(tabsItemClass, TabsContentItemClass) {
+        var tabs = tabsItemClass;
+        var tabsContent = TabsContentItemClass;
+        institutionSmallPictures.on('click', function(event) {
+            event.preventDefault();
+            $(this).addClass('active').siblings().removeClass('active');
+            var index = institutionSmallPictures.index($(this));
+            institutionBigPictures.eq(index).addClass('active').siblings().removeClass('active');
+        });
+    }
+    createTabs('.tabs .tabs-item','.tabs-content .tabs-content-item');
+
 
   // Время для переключения баннеров
   var timers = [$("#t13"),$("#t1")];
@@ -263,6 +267,7 @@ jQuery(function($){
           }
          });
      });
+    $window.trigger('scroll');
 // Эффект  когда ты скролишь
 
 
@@ -300,3 +305,162 @@ jQuery(function($){
     $window.on('scroll', onScroll);
 //fixed-menu
 //меню   фиксируется  или когда остановиться скролл или скролл вверх
+
+
+
+// keyup
+    $(document).keyup(function(e) {
+        if (e.keyCode == 38 && $(".main-content").hasClass('open')) {
+            console.log("1");
+        }
+        if (e.keyCode == 40 && $(".main-content").hasClass('open')) {
+            console.log("2");
+        }
+        if (e.keyCode == 39 && $(".main-content").hasClass('open')) {
+            console.log("3");
+        }
+    });
+// keyup
+
+
+
+// пролистать по нажатия на клаве вниз и в вверх по списку (реализовано на реалии)
+    var itemIndex = 0;
+    var a = $("li").length;
+    $(document).keyup(function(e) {
+        if (e.keyCode == 38) {
+            console.log(itemIndex);
+            if(itemIndex <= a && itemIndex > 0){
+                itemIndex = itemIndex - 1
+            }
+
+            $("li").eq(itemIndex).addClass("selected").siblings().removeClass("selected");
+        } else if (e.keyCode == 40) {
+            console.log(itemIndex);
+            if(itemIndex < a && itemIndex >= 0){
+                itemIndex = itemIndex + 1
+            }
+            $("li").eq(itemIndex).addClass("selected").siblings().removeClass("selected");
+
+        }
+    });
+// пролистать по нажатия на клаве вниз и в вверх по списку (реализовано на реалии)
+
+
+
+
+
+// validation
+    function validateEmail(email) {
+        var pattern = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return pattern.test(email);
+    };
+
+    function validateName(name) {
+        var pattern = /^[( )A-Za-zА-Яа-яЁё0-9_-]{3,25}$/;
+        return pattern.test(name);
+    };
+
+    function validatePhone(phone) {
+        var pattern = /^[( )0-9]{9,11}$/;
+        return pattern.test(phone);
+    };
+    function checkOnChange($inputclassjs, validate) {
+        $($inputclassjs).on("keyup change blur", function () {
+            var name = $(this).val();
+            if (!validate(name)) {
+                $(this).addClass('disabled');
+                $(this).removeClass('success');
+                $(this).parents("form").addClass('not-valide');
+            }
+            else {
+                $(this).removeClass('disabled');
+                $(this).addClass('success');
+                $(this).parents("form").removeClass('not-valide');
+            }
+        });
+    };
+
+    checkOnChange('.input-name-js', validateName);
+    checkOnChange('.input-phone-js', validatePhone);
+    checkOnChange('.input-email-js', validateEmail);
+
+    $('.input-text-js').on("keyup change blur", function () {
+        var text = $(this).val();
+        if (text.length <= 2) {
+            $(this).addClass('disabled');
+            $(this).removeClass('success');
+            $(this).parents("form").addClass('not-valide');
+        }
+        else {
+            $(this).removeClass('disabled');
+            $(this).addClass('success');
+            $(this).parents("form").removeClass('not-valide');
+        }
+    });
+    $(document).on('click','.btn_submit-js', function(evt) {
+        var name = $(this).parents("form").find('.input-name-js');
+        var email = $(this).parents("form").find('.email-js');
+        var text = $(this).parents("form").find('.input-text-js');
+        var phone = $(this).parents("form").find('.input-phone-js');
+
+        if(email.length > 0 && email.hasClass("required")){
+            if(email.hasClass('required') && !validateEmail(email.val())) {
+                $(this).parents("form").find('.email-js').addClass('disabled');
+                $(this).parents("form").find('.email-js').removeClass('success');
+                $(this).parents("form").addClass('not-valide');
+                $(this).parents("form").find(".icon-paperplane").addClass('disabled');
+                $(this).parents("form").find(".icon-paperplane").removeClass('success');
+            }else {
+                $(this).parents("form").find('.email-js').removeClass('disabled');
+                $(this).parents("form").find('.email-js').addClass('success');
+                $(this).parents("form").removeClass('not-valide');
+                $(this).parents("form").find(".icon-paperplane").addClass('success');
+                $(this).parents("form").find(".icon-paperplane").removeClass('disabled');
+            }
+        }
+
+        if(name.length > 0 && name.hasClass("required")){
+            if(!validateName(name.val())) {
+                $(this).parents("form").find('.input-name-js').addClass('disabled');
+                $(this).parents("form").addClass('not-valide');
+                $(this).removeClass('success');
+            }else {
+                $(this).parents("form").find('.input-name-js').removeClass('disabled');
+                $(this).parents("form").removeClass('not-valide');
+                $(this).addClass('success');
+            }
+        }
+
+        if(text.length > 0 && text.hasClass("required")){
+            if( text.val().length <= 2) {
+                $(this).parents("form").find('.input-text-js').addClass('disabled');
+                $(this).parents("form").addClass('not-valide');
+                $(this).removeClass('success');
+            }else {
+                $(this).parents("form").find('.input-text-js').removeClass('disabled');
+                $(this).parents("form").removeClass('not-valide');
+                $(this).addClass('success');
+            }
+        }
+
+        if(phone.length > 0 && phone.hasClass("required")){
+            if(!validatePhone(phone.val())) {
+                $(this).parents("form").find('.input-phone-js').addClass('disabled');
+                $(this).parents("form").addClass('not-valide');
+                $(this).removeClass('success');
+            }else {
+                $(this).parents("form").find('.input-phone-js').removeClass('disabled');
+                $(this).parents("form").removeClass('not-valide');
+                $(this).addClass('success');
+            }
+        }
+
+        if( name.hasClass("disabled") || email.hasClass("disabled") || text.hasClass("disabled") || phone.hasClass("disabled") ) {
+            return false
+        }else{
+            console.log("2");
+        }
+
+    });
+// validation

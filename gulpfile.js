@@ -89,11 +89,11 @@ gulp.task('fonts:build', function () {
 gulp.task('images:build', function () {
     return gulp.src(path.src.images)
         .pipe(debug({title: 'images:'}))
-        .pipe(imagemin({
-            progressive: true,
-            interlaced: true,
-            svgoPlugins: [{removeViewBox: false}]
-        }))
+        // .pipe(imagemin({
+        //     progressive: true,
+        //     interlaced: true,
+        //     svgoPlugins: [{removeViewBox: false}]
+        // }))
         .pipe(gulp.dest(path.build.images))
         .pipe(connect.reload());
     ;
@@ -113,6 +113,22 @@ gulp.task('vendor:js:build', function () {
         .pipe(gulp.dest(path.build.js))
         .pipe(connect.reload());
     ;
+});
+
+gulp.task('Iconfont:build', function(){
+    return gulp.src(['assets/img/icons/*.svg'])
+        .pipe(iconfont({
+            fontName: 'iconFont',
+            prependUnicode: true,
+            formats: ['ttf', 'eot', 'woff', 'svg'],
+            // timestamp: runTimestamp,
+            normalize: true,
+            fontWeight: '300',
+            fontHeight: 100,
+            fixedWidth: false,
+            centerHorizontally: false
+        }))
+        .pipe(gulp.dest('assets/fonts/'));
 });
 
 gulp.task('vendor:css:build', function () {
@@ -177,6 +193,7 @@ gulp.task('rebuild', function () {
         'html:build',
         'fonts:build',
         'images:build',
+        'Iconfont:build',
         ['vendor:js:build', 'vendor:css:build'],
         'js:build',
         'sass:build',
@@ -193,9 +210,9 @@ gulp.task('watch', function () {
         gulp.start('html:build');
     });
 
-    // watch([path.watch.images], function () {
-    //     gulp.start('images:build');
-    // });
+    watch([path.watch.images], function () {
+        gulp.start('images:build');
+    });
 
     watch([path.watch.fonts], function () {
         gulp.start('fonts:build');

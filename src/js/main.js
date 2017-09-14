@@ -1,3 +1,6 @@
+//= browser.js
+
+
 $( document ).ready(function() {
     InitSlider();
 });
@@ -15,8 +18,6 @@ $(window).scroll(function() {
 
 
 function InitSlider() {
-    var appendNumber = 4;
-    var prependNumber = 1;
     var swiper = new Swiper('.swiper-container', {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
@@ -25,6 +26,7 @@ function InitSlider() {
         paginationClickable: true,
         spaceBetween: 20,
     });
+
 }
 
     
