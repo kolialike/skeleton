@@ -36,17 +36,15 @@ jQuery(function($){
   $('.slider-content').on('mouseover',function() { swipers.stopAutoplay(); }); $('.slider-content').on('mouseout',function() { swipers.startAutoplay(); });
 
   //Табы по индексу
-    function createTabs(tabsItemClass, TabsContentItemClass) {
-        var tabs = tabsItemClass;
-        var tabsContent = TabsContentItemClass;
-        institutionSmallPictures.on('click', function(event) {
+    function initCreateTabs(tabsItemClass, TabsContentItemClass) {
+        $(tabsItemClass).on('click', function(event) {
             event.preventDefault();
             $(this).addClass('active').siblings().removeClass('active');
-            var index = institutionSmallPictures.index($(this));
-            institutionBigPictures.eq(index).addClass('active').siblings().removeClass('active');
+            var index = $(tabsItemClass).index($(this));
+            $(TabsContentItemClass).eq(index).addClass('active').siblings().removeClass('active');
         });
     }
-    createTabs('.tabs .tabs-item','.tabs-content .tabs-content-item');
+    initCreateTabs('.tabs .tabs-item','.tabs-content .tabs-content-item');
 
 
   // Время для переключения баннеров

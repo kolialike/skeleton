@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e14c44ba-db90-460b-aeca-64cb6a4a6890" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/browser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sass/layout/_global-style.sass" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all-skript.js" afterPath="$PROJECT_DIR$/all-skript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/css/screen.css" afterPath="$PROJECT_DIR$/build/css/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/html/index.html" afterPath="$PROJECT_DIR$/build/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/js/main.js" afterPath="$PROJECT_DIR$/build/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/js/vendor.js" afterPath="$PROJECT_DIR$/build/js/vendor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/html/index.html" afterPath="$PROJECT_DIR$/src/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/main.js" afterPath="$PROJECT_DIR$/src/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sass/constants/_fonts.scss" afterPath="$PROJECT_DIR$/src/sass/constants/_fonts.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sass/layout/_base.sass" afterPath="$PROJECT_DIR$/src/sass/layout/_base.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sass/layout/_default.sass" afterPath="$PROJECT_DIR$/src/sass/layout/_default.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sass/screen.sass" afterPath="$PROJECT_DIR$/src/sass/screen.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vendor/swiper.jquery.umd.min.js" afterPath="$PROJECT_DIR$/src/vendor/swiper.jquery.umd.min.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,16 +22,16 @@
       <file leaf-file-name="all-skript.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/all-skript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="357">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
-                <element signature="e#3154#5072#0" expanded="false" />
-                <element signature="e#5206#5341#0" expanded="false" />
-                <element signature="e#5805#6319#0" expanded="false" />
+                <element signature="e#3065#4983#0" expanded="false" />
+                <element signature="e#5117#5252#0" expanded="false" />
+                <element signature="e#5716#6230#0" expanded="false" />
                 <element signature="n#!!block;n#copyModals#0" expanded="false" />
                 <element signature="n#!!block;n#getRandomInt#0" expanded="false" />
-                <element signature="e#7478#7939#0" expanded="false" />
-                <marker date="1504883726727" expanded="false" signature="7980:10672" ph="{...}" />
+                <element signature="e#7389#7850#0" expanded="false" />
+                <marker date="1505376466466" expanded="false" signature="7891:10583" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -76,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1615">
-              <caret line="95" column="14" lean-forward="true" selection-start-line="91" selection-start-column="11" selection-end-line="95" selection-end-column="14" />
+              <caret line="95" column="14" lean-forward="false" selection-start-line="91" selection-start-column="11" selection-end-line="95" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -96,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/src/js/browser.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3298">
-              <caret line="194" column="0" lean-forward="true" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+              <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,13 +123,13 @@
         <option value="$PROJECT_DIR$/src/html/index.html" />
         <option value="$PROJECT_DIR$/src/html/partials/head.html" />
         <option value="$PROJECT_DIR$/src/sass/layout/_content.sass" />
-        <option value="$PROJECT_DIR$/all-skript.js" />
         <option value="$PROJECT_DIR$/src/js/browser.js" />
         <option value="$PROJECT_DIR$/src/js/main.js" />
         <option value="$PROJECT_DIR$/src/sass/screen.sass" />
         <option value="$PROJECT_DIR$/src/sass/layout/_default.sass" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/all-skript.js" />
       </list>
     </option>
   </component>
@@ -192,7 +177,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,6 +219,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,27 +355,27 @@
       <workItem from="1504883545462" duration="183000" />
       <workItem from="1505297673500" duration="456000" />
       <workItem from="1505310420474" duration="420000" />
+      <workItem from="1505375670956" duration="796000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18445000" />
+    <option name="totallyTimeSpent" value="19241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="1" width="1934" height="1036" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28202367" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33256352" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27771798" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33256352" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.50653595" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -398,6 +383,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -699,7 +685,7 @@
     <entry file="file://$PROJECT_DIR$/src/js/browser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3298">
-          <caret line="194" column="0" lean-forward="true" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+          <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -730,7 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -745,7 +730,7 @@
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1615">
-          <caret line="95" column="14" lean-forward="true" selection-start-line="91" selection-start-column="11" selection-end-line="95" selection-end-column="14" />
+          <caret line="95" column="14" lean-forward="false" selection-start-line="91" selection-start-column="11" selection-end-line="95" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -760,16 +745,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/all-skript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="357">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
-            <element signature="e#3154#5072#0" expanded="false" />
-            <element signature="e#5206#5341#0" expanded="false" />
-            <element signature="e#5805#6319#0" expanded="false" />
+            <element signature="e#3065#4983#0" expanded="false" />
+            <element signature="e#5117#5252#0" expanded="false" />
+            <element signature="e#5716#6230#0" expanded="false" />
             <element signature="n#!!block;n#copyModals#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0" expanded="false" />
-            <element signature="e#7478#7939#0" expanded="false" />
-            <marker date="1504883726727" expanded="false" signature="7980:10672" ph="{...}" />
+            <element signature="e#7389#7850#0" expanded="false" />
+            <marker date="1505376466466" expanded="false" signature="7891:10583" ph="{...}" />
           </folding>
         </state>
       </provider>
