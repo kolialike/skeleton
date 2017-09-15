@@ -22,16 +22,16 @@
       <file leaf-file-name="all-skript.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/all-skript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="486">
+              <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding>
-                <element signature="e#3065#4983#0" expanded="false" />
-                <element signature="e#5117#5252#0" expanded="false" />
-                <element signature="e#5716#6230#0" expanded="false" />
+                <element signature="e#3798#5716#0" expanded="false" />
+                <element signature="e#5850#5985#0" expanded="false" />
+                <element signature="e#6449#6963#0" expanded="false" />
                 <element signature="n#!!block;n#copyModals#0" expanded="false" />
                 <element signature="n#!!block;n#getRandomInt#0" expanded="false" />
-                <element signature="e#7389#7850#0" expanded="false" />
-                <marker date="1505376466466" expanded="false" signature="7891:10583" ph="{...}" />
+                <element signature="e#8122#8583#0" expanded="false" />
+                <marker date="1505475824973" expanded="false" signature="8624:11316" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -104,6 +104,7 @@
       <find>скро</find>
       <find>auto</find>
       <find>.grid-container</find>
+      <find>paralla</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -176,7 +177,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -219,7 +220,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,19 +356,20 @@
       <workItem from="1504883545462" duration="183000" />
       <workItem from="1505297673500" duration="456000" />
       <workItem from="1505310420474" duration="420000" />
-      <workItem from="1505375670956" duration="796000" />
+      <workItem from="1505375670956" duration="1406000" />
+      <workItem from="1505460634185" duration="3117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19241000" />
+    <option name="totallyTimeSpent" value="22968000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="1" width="1934" height="1036" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28202367" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2863294" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -745,16 +747,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/all-skript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="486">
+          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding>
-            <element signature="e#3065#4983#0" expanded="false" />
-            <element signature="e#5117#5252#0" expanded="false" />
-            <element signature="e#5716#6230#0" expanded="false" />
+            <element signature="e#3798#5716#0" expanded="false" />
+            <element signature="e#5850#5985#0" expanded="false" />
+            <element signature="e#6449#6963#0" expanded="false" />
             <element signature="n#!!block;n#copyModals#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0" expanded="false" />
-            <element signature="e#7389#7850#0" expanded="false" />
-            <marker date="1505376466466" expanded="false" signature="7891:10583" ph="{...}" />
+            <element signature="e#8122#8583#0" expanded="false" />
+            <marker date="1505475824973" expanded="false" signature="8624:11316" ph="{...}" />
           </folding>
         </state>
       </provider>

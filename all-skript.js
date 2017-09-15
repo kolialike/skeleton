@@ -30,7 +30,22 @@ jQuery(function($){
     parallax.css({
       "marginLeft": -(cordX+cordY)/coef + "px"
     })
-  }); 
+  });
+
+  //parallax banner img + text
+    if($('.parallax-js').length > 0){
+        var parallaxOffsetTop = ($(window).scrollTop() - $(".parallax-js").offset().top);
+        if($(window).scrollTop() >= $(".parallax-js").offset().top){
+            if($(window).width() <= 760){
+                $('.parallax-text-js').css('transform', 'translateY(' + (parallaxOffsetTop * 0.3) + 'px)');
+            }else{
+                $('.parallax-text-js').css('transform', 'translateY(' + (parallaxOffsetTop * 0.6) + 'px)');
+            }
+            $('.parallax-img-js').css('transform', 'translateY(' + (parallaxOffsetTop * 0.6) + 'px)');
+        }else{
+            $('.parallax-img-js').css('transform', 'translateY(' + (0) + 'px)')
+        }
+    }
 
   // Для свайпера стоп при наведении
   $('.slider-content').on('mouseover',function() { swipers.stopAutoplay(); }); $('.slider-content').on('mouseout',function() { swipers.startAutoplay(); });
