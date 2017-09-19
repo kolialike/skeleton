@@ -5,15 +5,10 @@ var path = {
         js: 'src/js/main.js',
         sass: 'src/sass/*.{sass,scss}',
         images: 'src/img/**/*.{jpg,png,gif,svg}',
-        html: 'src/html/*.html',
-        vendor: {
-            js: 'src/vendor/vendor.js',
-            css: 'src/vendor/*.scss'
-        }
+        html: 'src/html/*.html'
     },
 
     watch: {
-        vendor: 'src/vendor/**/*.*',
         fonts: 'src/fonts/**/*.{eot,ttf,woff,woff2,svg}',
         js: 'src/js/**/*.js',
         sass: 'src/sass/**/*.{sass,scss}',
@@ -22,12 +17,12 @@ var path = {
     },
 
     build: {
-        dir: 'build/',
-        fonts: 'build/fonts/',
-        js: 'build/js/',
-        css: 'build/css/',
-        html: 'build/html',
-        images: 'build/img/'
+        dir: 'assets/',
+        fonts: 'assets/fonts/',
+        js: 'assets/js/',
+        css: 'assets/css/',
+        html: 'assets/html',
+        images: 'assets/img/'
     }
 };
 
@@ -89,63 +84,33 @@ gulp.task('fonts:build', function () {
 gulp.task('images:build', function () {
     return gulp.src(path.src.images)
         .pipe(debug({title: 'images:'}))
-        // .pipe(imagemin({
-        //     progressive: true,
-        //     interlaced: true,
-        //     svgoPlugins: [{removeViewBox: false}]
-        // }))
+        .pipe(imagemin({
+            progressive: true,
+            interlaced: true,
+            svgoPlugins: [{removeViewBox: false}]
+        }))
         .pipe(gulp.dest(path.build.images))
         .pipe(connect.reload());
     ;
 });
 
-gulp.task('vendor:js:build', function () {
-    return gulp.src(path.src.vendor.js)
-        .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-            }
-        }))
-        .pipe(debug({title: 'vendor js:'}))
-        .pipe(rigger())
-        // .pipe(uglify())
-        .pipe(gulp.dest(path.build.js))
-        .pipe(connect.reload());
-    ;
-});
 
-gulp.task('Iconfont:build', function(){
-    return gulp.src(['assets/img/icons/*.svg'])
-        .pipe(iconfont({
-            fontName: 'iconFont',
-            prependUnicode: true,
-            formats: ['ttf', 'eot', 'woff', 'svg'],
-            // timestamp: runTimestamp,
-            normalize: true,
-            fontWeight: '300',
-            fontHeight: 100,
-            fixedWidth: false,
-            centerHorizontally: false
-        }))
-        .pipe(gulp.dest('assets/fonts/'));
-});
+// gulp.task('Iconfont:build', function(){
+//     return gulp.src(['src/img/icons/*.svg'])
+//         .pipe(iconfont({
+//             fontName: 'iconFont',
+//             prependUnicode: true,
+//             formats: ['ttf', 'eot', 'woff', 'svg'],
+//             // timestamp: runTimestamp,
+//             normalize: true,
+//             fontWeight: '300',
+//             fontHeight: 100,
+//             fixedWidth: false,
+//             centerHorizontally: false
+//         }))
+//         .pipe(gulp.dest('assets/fonts/'));
+// });
 
-gulp.task('vendor:css:build', function () {
-    return gulp.src(path.src.vendor.css)
-        .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-            }
-        }))
-        .pipe(debug({title: 'vendor css:'}))
-        .pipe(rigger())
-        // .pipe(cssmin())
-        .pipe(gulp.dest(path.build.css))
-        .pipe(connect.reload());
-    ;
-});
 
 gulp.task('js:build', function () {
     return gulp.src(path.src.js)
@@ -183,18 +148,13 @@ gulp.task('sass:build', function () {
         .pipe(connect.reload());
 });
 
-gulp.task('vendor:build', function () {
-    runSequence('vendor:js:build', 'vendor:css:build');
-});
-
 gulp.task('rebuild', function () {
     runSequence(
         'clean',
         'html:build',
         'fonts:build',
         'images:build',
-        'Iconfont:build',
-        ['vendor:js:build', 'vendor:css:build'],
+        // 'Iconfont:build',
         'js:build',
         'sass:build',
         'images:build',
@@ -216,10 +176,6 @@ gulp.task('watch', function () {
 
     watch([path.watch.fonts], function () {
         gulp.start('fonts:build');
-    });
-
-    watch([path.watch.vendor], function () {
-        gulp.start('vendor:build');
     });
 
     watch([path.watch.js], function () {

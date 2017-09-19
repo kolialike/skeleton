@@ -41,9 +41,10 @@ jQuery(function($){
             }else{
                 $('.parallax-text-js').css('transform', 'translateY(' + (parallaxOffsetTop * 0.6) + 'px)');
             }
-            $('.parallax-img-js').css('transform', 'translateY(' + (parallaxOffsetTop * 0.6) + 'px)');
+            $('.parallax-img-js').css('transform', 'translateY(' + (parallaxOffsetTop * 0.3) + 'px)');
         }else{
-            $('.parallax-img-js').css('transform', 'translateY(' + (0) + 'px)')
+            $('.parallax-img-js').css('transform', 'translateY(' + (0) + 'px)');
+            $('.parallax-text-js').css('transform', 'translateY(' + (0) + 'px)');
         }
     }
 
@@ -378,18 +379,27 @@ jQuery(function($){
         var pattern = /^[( )0-9]{9,11}$/;
         return pattern.test(phone);
     };
+
+    function validateText(text) {
+        if(text.length <= 2){
+            return false;
+        }else{
+            return true;
+        }
+    };
+
     function checkOnChange($inputclassjs, validate) {
         $($inputclassjs).on("keyup change blur", function () {
             var name = $(this).val();
             if (!validate(name)) {
                 $(this).addClass('disabled');
                 $(this).removeClass('success');
-                $(this).parents("form").addClass('not-valide');
+                $(this).parents("form").addClass('not-valid');
             }
             else {
                 $(this).removeClass('disabled');
                 $(this).addClass('success');
-                $(this).parents("form").removeClass('not-valide');
+                $(this).parents("form").removeClass('not-valid');
             }
         });
     };
@@ -397,83 +407,38 @@ jQuery(function($){
     checkOnChange('.input-name-js', validateName);
     checkOnChange('.input-phone-js', validatePhone);
     checkOnChange('.input-email-js', validateEmail);
+    checkOnChange('.input-text-js', validateText);
 
-    $('.input-text-js').on("keyup change blur", function () {
-        var text = $(this).val();
-        if (text.length <= 2) {
-            $(this).addClass('disabled');
-            $(this).removeClass('success');
-            $(this).parents("form").addClass('not-valide');
-        }
-        else {
-            $(this).removeClass('disabled');
-            $(this).addClass('success');
-            $(this).parents("form").removeClass('not-valide');
-        }
-    });
     $(document).on('click','.btn_submit-js', function(evt) {
-        var name = $(this).parents("form").find('.input-name-js');
-        var email = $(this).parents("form").find('.email-js');
-        var text = $(this).parents("form").find('.input-text-js');
-        var phone = $(this).parents("form").find('.input-phone-js');
 
-        if(email.length > 0 && email.hasClass("required")){
-            if(email.hasClass('required') && !validateEmail(email.val())) {
-                $(this).parents("form").find('.email-js').addClass('disabled');
-                $(this).parents("form").find('.email-js').removeClass('success');
-                $(this).parents("form").addClass('not-valide');
-                $(this).parents("form").find(".icon-paperplane").addClass('disabled');
-                $(this).parents("form").find(".icon-paperplane").removeClass('success');
-            }else {
-                $(this).parents("form").find('.email-js').removeClass('disabled');
-                $(this).parents("form").find('.email-js').addClass('success');
-                $(this).parents("form").removeClass('not-valide');
-                $(this).parents("form").find(".icon-paperplane").addClass('success');
-                $(this).parents("form").find(".icon-paperplane").removeClass('disabled');
+        function checkOnSubmit($inputclassjs, validate) {
+            var thisElement = $(".btn_submit-js").parents("form").find($inputclassjs);
+            if(thisElement.length > 0){
+                if(!validate(thisElement.val())) {
+                    thisElement.addClass('disabled');
+                    thisElement.removeClass('success');
+                    $(this).parents("form").addClass('not-valid');
+                }else {
+                    thisElement.removeClass('disabled');
+                    thisElement.addClass('success');
+                    $(this).parents("form").removeClass('not-valid');
+                }
             }
         }
 
-        if(name.length > 0 && name.hasClass("required")){
-            if(!validateName(name.val())) {
-                $(this).parents("form").find('.input-name-js').addClass('disabled');
-                $(this).parents("form").addClass('not-valide');
-                $(this).removeClass('success');
-            }else {
-                $(this).parents("form").find('.input-name-js').removeClass('disabled');
-                $(this).parents("form").removeClass('not-valide');
-                $(this).addClass('success');
-            }
-        }
+        checkOnSubmit('.input-name-js', validateName);
+        checkOnSubmit('.input-phone-js', validatePhone);
+        checkOnSubmit('.input-email-js', validateEmail);
+        checkOnSubmit('.input-text-js', validateText);
 
-        if(text.length > 0 && text.hasClass("required")){
-            if( text.val().length <= 2) {
-                $(this).parents("form").find('.input-text-js').addClass('disabled');
-                $(this).parents("form").addClass('not-valide');
-                $(this).removeClass('success');
-            }else {
-                $(this).parents("form").find('.input-text-js').removeClass('disabled');
-                $(this).parents("form").removeClass('not-valide');
-                $(this).addClass('success');
+        $(this).parents("form").find("input").each(function(index, el) {
+            if( $(this).hasClass("disabled") || $(this).parents("form").hasClass('not-valid') ) {
+                return false
+            }else{
+                return true
             }
-        }
+        });
 
-        if(phone.length > 0 && phone.hasClass("required")){
-            if(!validatePhone(phone.val())) {
-                $(this).parents("form").find('.input-phone-js').addClass('disabled');
-                $(this).parents("form").addClass('not-valide');
-                $(this).removeClass('success');
-            }else {
-                $(this).parents("form").find('.input-phone-js').removeClass('disabled');
-                $(this).parents("form").removeClass('not-valide');
-                $(this).addClass('success');
-            }
-        }
-
-        if( name.hasClass("disabled") || email.hasClass("disabled") || text.hasClass("disabled") || phone.hasClass("disabled") ) {
-            return false
-        }else{
-            console.log("2");
-        }
 
     });
 // validation

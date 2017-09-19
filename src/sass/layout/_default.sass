@@ -8,6 +8,12 @@ input, select, textarea
 
 textarea
 	resize: vertical
+
+input, textarea
+	&.disabled
+		border-color: red !important
+	&.success
+		border-color: green !important
 	
 input[type="submit"], select
 	cursor: pointer
