@@ -142,9 +142,7 @@ jQuery(function($){
                         var singlePreviewHeight = $(".single-preview:not(.single-preview-img)");
                         var sidebarScrollHeight = $('.sidebar-scroll-height').outerHeight();
                         var stopPosition;
-                        if($("main").hasClass("single-full-v2")){
-                            stopPosition = sidebarScrollHeight - stickyHeight - singlePreviewHeight -40;
-                        } else if($("main").hasClass("single-full")){
+                        if($("main").hasClass("single-full")){
                             stopPosition = sidebarScrollHeight - stickyHeight - singlePreviewHeight - $(".img-fill-subtitle").outerHeight() - 80;
                         } else{
                             stopPosition = sidebarScrollHeight - stickyHeight - 20;
@@ -169,21 +167,6 @@ $(document).click(function(e) {
     $("body").removeClass('callback-container-open');
    }
   });
-//   var basket = $(".basket");
-//     basket.on('click', function(event) {
-//       body.addClass('basket-open');
-//     });
-    
-//   $(document).click(function(e) {
-//     var div = $(".basket");
-//     if (!div.is(e.target) && div.has(e.target).length === 0) {
-//        $('body').removeClass('basket-open');
-//     }
-//   });
-
-
-// });
-
 
 
 // Модальное окно
