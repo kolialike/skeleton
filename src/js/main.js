@@ -2,11 +2,18 @@
 //= browser.js
 //= validation-form.js
 //= swiper.jquery.umd.min.js
+//= slick.js
+
+$(document).ready(function() {
+    InitSlider();
+    initBrowser();
+
+
+});
+
 
 // resize
 $( window ).resize(function() {
-    InitSlider();
-    initBrowser();
 });
 
 
@@ -38,3 +45,11 @@ function initBrowser() {
 
 
 
+function getSliderSettings(){
+    return {
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+    }
+}
+$('.slick-my').slick(getSliderSettings());

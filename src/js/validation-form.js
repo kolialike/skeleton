@@ -1,11 +1,11 @@
 // Validation by input type
-<form action="#" novalidate>
-<input type="text" placeholder="name" required>
-<input type="email" placeholder="Email" required>
-<input type="tel" placeholder="telephone" required>
-<input type="text" placeholder="text" required>
-<input type="submit">
-    </form>
+// <form action="#" novalidate>
+// <input type="text" placeholder="name" required>
+// <input type="email" placeholder="Email" required>
+// <input type="tel" placeholder="telephone" required>
+// <input type="text" placeholder="text" required>
+// <input type="submit">
+//     </form>
 
 
 function validateEmail(email) {
@@ -98,13 +98,13 @@ $( document ).ready(function() {
 
 
 // Validation by Class
-<form action="#" novalidate>
-<input type="text" class="input-name-js" placeholder="name">
-    <input type="email" class="input-email-js" placeholder="Email">
-    <input type="tel" class="input-phone-js" placeholder="telephone">
-    <input type="text" class="input-text-js" placeholder="text">
-    <input type="submit" class="btn_submit-js">
-    </form>
+// <form action="#" novalidate>
+// <input type="text" class="input-name-js" placeholder="name">
+//     <input type="email" class="input-email-js" placeholder="Email">
+//     <input type="tel" class="input-phone-js" placeholder="telephone">
+//     <input type="text" class="input-text-js" placeholder="text">
+//     <input type="submit" class="btn_submit-js">
+//     </form>
 function validateEmail(email) {
     var pattern = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     return pattern.test(email);
