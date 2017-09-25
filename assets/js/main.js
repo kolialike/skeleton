@@ -201,7 +201,12 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 
 // Validation by input type End
 (function($){
+    'use strict';
     var validationRules = {
+        rulesRequared : function ($this) {
+            return $this.prop("required");
+        },
+
         rulesEmail : function( email ) {
             var pattern = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
             return pattern.test(email);
@@ -239,48 +244,66 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
             }
         },
     };
+
+    var inputType = {
+        email : function($this){
+            ValidateAction.change($this, validationRules.rulesEmail);
+        },
+        text : function($this){
+            ValidateAction.change($this, validationRules.rulesText);
+        },
+        name : function($this){
+            ValidateAction.change($this, validationRules.rulesName);
+        },
+        tel : function($this){
+            ValidateAction.change($this, validationRules.rulesPhone);
+        },
+    };
+
+
     $.fn.validateInit = function() {
         // validateInit : function () {
         $("input:not([type='submit'], [type='file'])").each(function(index, el) {
-            $(this).on('keyup change blur', function() {
-                if($(this).prop("required")){
+            var thisel = $(this);
+            thisel.on('keyup change blur', function() {
+                if(validationRules.rulesRequared(thisel)){
                     console.log("required");
-                    if($(this)[0].type == "email"){
-                        ValidateAction.change($(this), validationRules.rulesEmail);
-                    }else if($(this)[0].type == "text"){
-                        ValidateAction.change($(this), validationRules.rulesText);
-                    }else if($(this)[0].type == "name"){
-                        ValidateAction.change($(this), validationRules.rulesName);
-                    }else if($(this)[0].type == "tel"){
-                        ValidateAction.change($(this), validationRules.rulesPhone);
+                    if(this.type == "email"){
+                        inputType.email(thisel);
+                    }else if(this.type == "text"){
+                        inputType.text(thisel);
+                    }else if(this.type == "name"){
+                        inputType.name(thisel);
+                    }else if(this.type == "tel"){
+                        inputType.tel(thisel);
                     }else{
                         console.log("another-type");
                     }
-
                 }else{
                     console.log("not-required");
                 }
             });
         });
         $(document).on('click','input[type="submit"]', function(el) {
+            var inputInForm = $(this).parents("form").find("input:not([type='submit'], [type='file'])");
             if ($(el.target).closest('form').length){
-                console.log("123");
-                $(this).parents("form").find("input:not([type='submit'], [type='file'])").each(function() {
+                inputInForm.each(function() {
                     $(this).trigger('keyup');
-                    if( $(this).hasClass("disabled") || $(this).parents("form").hasClass('not-valid') ) {
-                        $(this).parents("form").submit(function(){
-                            return false
-                        });
-                    }else{
-                        console.log("form is send");
-                    }
                 });
+                if( inputInForm.hasClass("disabled") || $('input').parents("form").hasClass('not-valid') ) {
+                    $(this).parents("form").submit(function(){
+                        return false
+                    });
+                }else{
+                    console.log("form is send");
+                }
             }
 
         });
     };
-    $('form:not(.grija)').validateInit();
 })( jQuery );
+
+$('form').validateInit();
 
 // var methods = {
 //     init : function( options ) {

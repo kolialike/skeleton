@@ -418,18 +418,18 @@ jQuery(function($) {
             });
         });
         $(document).on('click','input[type="submit"]', function(el) {
+            var inputInForm = $(this).parents("form").find("input:not([type='submit'], [type='file'])");
             if ($(el.target).closest('form').length){
-                console.log("123");
-                $(this).parents("form").find("input:not([type='submit'], [type='file'])").each(function() {
+                inputInForm.each(function() {
                     $(this).trigger('keyup');
-                    if( $(this).hasClass("disabled") || $(this).parents("form").hasClass('not-valid') ) {
-                        $(this).parents("form").submit(function(){
-                            return false
-                        });
-                    }else{
-                        console.log("form is send");
-                    }
                 });
+                if( inputInForm.hasClass("disabled") || $('input').parents("form").hasClass('not-valid') ) {
+                    $(this).parents("form").submit(function(){
+                        return false
+                    });
+                }else{
+                    console.log("form is send");
+                }
             }
 
         });
@@ -499,19 +499,20 @@ jQuery(function($) {
     checkOnChange('.input-email-js', validateEmail);
     checkOnChange('.input-text-js', validateText);
 
-    $(document).on('click','.btn_submit-js', function(evt) {
-
-        $(this).parents("form").find("input:not([type='submit'], [type='file'])").each(function() {
-            $(this).trigger('keyup');
-            if( $(this).hasClass("disabled") || $(this).parents("form").hasClass('not-valid') ) {
+    $(document).on('click','input[type="submit"]', function(el) {
+        var inputInForm = $(this).parents("form").find("input:not([type='submit'], [type='file'])");
+        if ($(el.target).closest('form').length){
+            inputInForm.each(function() {
+                $(this).trigger('keyup');
+            });
+            if( inputInForm.hasClass("disabled") || $('input').parents("form").hasClass('not-valid') ) {
                 $(this).parents("form").submit(function(){
                     return false
                 });
             }else{
                 console.log("form is send");
             }
-        });
-
+        }
 
     });
 // Validation by Class End
