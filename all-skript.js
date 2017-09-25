@@ -231,7 +231,7 @@ function getRandomInt(min, max) {
 
 
 
-// Эффект когда ты скролишь
+// Эффект когда ты скролишь //animation-plugin
 (function($) {
 
   var $ = window.jQuery || this.jQuery;
@@ -253,19 +253,20 @@ function getRandomInt(min, max) {
     
 }).call(this);
 
-jQuery(function($){
+jQuery(function($) {
     var $window = $(window);
-     var animateItems = $('.animate');
-     var af = $window.on('scroll', function() {
-         animateItems.each(function(index, el) {
-          var thisEl = $(el);
-          if(thisEl.visible(true) && !thisEl.hasClass('animated-elem')){
-           thisEl.addClass('animated-elem');
-          }
-         });
-     });
+    var animateItems = $('.animate');
+    var af = $window.on('scroll', function () {
+        animateItems.each(function (index, el) {
+            var thisEl = $(el);
+            if (thisEl.visible(true) && !thisEl.hasClass('animated-elem')) {
+                thisEl.addClass('animated-elem');
+            }
+        });
+    });
     $window.trigger('scroll');
-// Эффект  когда ты скролишь
+});
+// Эффект  когда ты скролишь //animation-plugin
 
 
 
@@ -514,3 +515,28 @@ jQuery(function($){
 
     });
 // Validation by Class End
+
+// таблица
+    function initTable() {
+        var table = jQuery('.single-page table');
+
+        table.find('td')
+            .mouseout(function () {
+                table.attr('class', jQuery('div').attr('class').replace(/\highlight.*?\b/g, ''));
+            })
+            .mouseover(function () {
+                var index = jQuery(this).index() + 1;
+                if (table.find('td:nth-of-type(' + index + '):hover').length != 0) {
+                    table.addClass('highlight-' + index + '');
+                }
+            });
+
+        jQuery('.content-rules table tr:first-of-type td').each(function () {
+            var newIndex = jQuery(this).index() + 1;
+
+            jQuery(this).closest('table').find('tr:not(:first-child)')
+                .find('td:nth-child(' + newIndex + ')').attr('data-title', jQuery(this).text());
+        });
+
+    }
+// таблица

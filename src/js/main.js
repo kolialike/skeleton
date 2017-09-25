@@ -1,4 +1,4 @@
-//= jquery-2.1.4.min.js
+//= jquery-3.2.1.min.js
 //= browser.js
 //= validation-form.js
 //= swiper.jquery.umd.min.js
@@ -52,4 +52,6 @@ function getSliderSettings(){
         slidesToScroll: 1
     }
 }
-$('.slick-my').slick(getSliderSettings());
+// $('.slick-my').slick(getSliderSettings());
+
+
