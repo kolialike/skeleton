@@ -74,7 +74,7 @@ jQuery(function($){
         return max;
     };
     console.log(maxHeight('.items-js'));
-
+// Возвращает высоту самого высокого div-а
 
   // Время для переключения баннеров
   var timers = [$("#t13"),$("#t1")];
@@ -319,6 +319,32 @@ jQuery(function($) {
 
 
 
+// таблица
+function initTable() {
+    var table = jQuery('.single-page table');
+
+    table.find('td')
+        .mouseout(function () {
+            table.attr('class', jQuery('div').attr('class').replace(/\highlight.*?\b/g, ''));
+        })
+        .mouseover(function () {
+            var index = jQuery(this).index() + 1;
+            if (table.find('td:nth-of-type(' + index + '):hover').length != 0) {
+                table.addClass('highlight-' + index + '');
+            }
+        });
+
+    jQuery('.content-rules table tr:first-of-type td').each(function () {
+        var newIndex = jQuery(this).index() + 1;
+
+        jQuery(this).closest('table').find('tr:not(:first-child)')
+            .find('td:nth-child(' + newIndex + ')').attr('data-title', jQuery(this).text());
+    });
+
+}
+// таблица
+
+
 // keyup
     $(document).keyup(function(e) {
         if (e.keyCode == 38 && $(".main-content").hasClass('open')) {
@@ -530,27 +556,120 @@ jQuery(function($) {
     });
 // Validation by Class End
 
-// таблица
-    function initTable() {
-        var table = jQuery('.single-page table');
 
-        table.find('td')
-            .mouseout(function () {
-                table.attr('class', jQuery('div').attr('class').replace(/\highlight.*?\b/g, ''));
-            })
-            .mouseover(function () {
-                var index = jQuery(this).index() + 1;
-                if (table.find('td:nth-of-type(' + index + '):hover').length != 0) {
-                    table.addClass('highlight-' + index + '');
+
+
+
+
+
+
+
+
+// Validation by plugin
+(function($){
+    'use strict';
+    var validationRules = {
+        rulesRequared : function ($this) {
+            return $this.prop("required");
+        },
+
+        rulesEmail : function( email ) {
+            var pattern = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            return pattern.test(email);
+        },
+
+        rulesName : function( name ) {
+            var pattern = /^[( )A-Za-zА-Яа-яЁё0-9_-]{3,25}$/;
+            return pattern.test(name);
+        },
+
+        rulesPhone : function( phone ) {
+            var pattern = /^[( )0-9]{9,11}$/;
+            return pattern.test(phone);
+        },
+
+        rulesText : function( text ) {
+            if(text.length <= 3){
+                return false;
+            }else{
+                return true;
+            }
+        },
+    };
+    var ValidateAction = {
+        change : function($this, validate) {
+            if (!validate($this.val()) && !$this.val().length <= 2) {
+                $this.addClass('disabled');
+                $this.removeClass('success');
+                $this.parents("form").addClass('not-valid');
+            }
+            else {
+                $this.removeClass('disabled');
+                $this.addClass('success');
+                $this.parents("form").removeClass('not-valid');
+            }
+        },
+    };
+
+    var inputType = {
+        email : function($this){
+            ValidateAction.change($this, validationRules.rulesEmail);
+        },
+        text : function($this){
+            ValidateAction.change($this, validationRules.rulesText);
+        },
+        name : function($this){
+            ValidateAction.change($this, validationRules.rulesName);
+        },
+        tel : function($this){
+            ValidateAction.change($this, validationRules.rulesPhone);
+        },
+    };
+
+
+    $.fn.validateInit = function() {
+        // validateInit : function () {
+        $("input:not([type='submit'], [type='file'])").each(function(index, el) {
+            var thisel = $(this);
+            thisel.on('keyup change blur', function() {
+                if(validationRules.rulesRequared(thisel)){
+                    console.log("required");
+                    if(this.type == "email"){
+                        inputType.email(thisel);
+                    }else if(this.type == "text"){
+                        inputType.text(thisel);
+                    }else if(this.type == "name"){
+                        inputType.name(thisel);
+                    }else if(this.type == "tel"){
+                        inputType.tel(thisel);
+                    }else{
+                        console.log("another-type");
+                    }
+                }else{
+                    console.log("not-required");
                 }
             });
-
-        jQuery('.content-rules table tr:first-of-type td').each(function () {
-            var newIndex = jQuery(this).index() + 1;
-
-            jQuery(this).closest('table').find('tr:not(:first-child)')
-                .find('td:nth-child(' + newIndex + ')').attr('data-title', jQuery(this).text());
         });
+        $(document).on('click','input[type="submit"]', function(el) {
+            var inputInForm = $(this).parents("form").find("input:not([type='submit'], [type='file'])");
+            if ($(el.target).closest('form').length){
+                inputInForm.each(function() {
+                    $(this).trigger('keyup');
+                });
+                if( inputInForm.hasClass("disabled") || $('input').parents("form").hasClass('not-valid') ) {
+                    $(this).parents("form").submit(function(){
+                        return false
+                    });
+                }else{
+                    console.log("form is send");
+                }
+            }
 
-    }
-// таблица
+        });
+    };
+})( jQuery );
+
+$('form').validateInit();
+
+// Validation by plugin End
+
