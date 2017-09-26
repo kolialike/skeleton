@@ -60,7 +60,20 @@ jQuery(function($){
             $(TabsContentItemClass).eq(index).addClass('active').siblings().removeClass('active');
         });
     }
-    initCreateTabs('.tabs .tabs-item','.tabs-content .tabs-content-item');
+    initCreateTabs('.tabs-js .item','.tabs-content-js .item');
+
+
+// Возвращает высоту самого высокого div-а
+
+    function maxHeight($blockClass, $height) {
+        var max = 0;
+        $($blockClass).each(function() {
+            max = Math.max( max, $(this).height() );
+        });
+
+        return max;
+    };
+    console.log(maxHeight('.items-js'));
 
 
   // Время для переключения баннеров

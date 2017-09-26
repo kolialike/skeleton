@@ -4,10 +4,10 @@
 //= swiper.jquery.umd.min.js
 //= slick.js
 
+
 $(document).ready(function() {
     InitSlider();
     initBrowser();
-
 
 });
 
@@ -32,8 +32,6 @@ function InitSlider() {
     //     paginationClickable: true,
     //     spaceBetween: 20,
     // });
-
-
 }
 
 function initBrowser() {

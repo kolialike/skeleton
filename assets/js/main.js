@@ -3724,10 +3724,10 @@ y.onClickPrev=function(e){e.preventDefault(),y.isBeginning&&!y.params.loop||y.sl
 
 }));
 
+
 $(document).ready(function() {
     InitSlider();
     initBrowser();
-
 
 });
 
@@ -3752,8 +3752,6 @@ function InitSlider() {
     //     paginationClickable: true,
     //     spaceBetween: 20,
     // });
-
-
 }
 
 function initBrowser() {
