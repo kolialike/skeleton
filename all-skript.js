@@ -385,6 +385,38 @@ function initTable() {
 
 
 
+// clear form
+$(this).find('input:not([type="hidden"])').val('').prop("checked", false);
+$(this).find('textarea').val('');
+$(this).find('select').val("").selectric('refresh');
+// clear form
+
+// add selectric otion
+$('select').selectric('init');
+$(window).resize(function() {
+    $('select').selectric('init');
+});
+$('.btn-add-option').on('click', function(event) {
+    var value = $(this).parents(".input-cover").find('.add_val').val();
+    if(value.length >= 1){
+        $(this).parents(".input-cover").find("select").append('<option>' + value + '</option>');
+        $(this).parents(".block-add-option").find("input").val('');
+    }
+    $("select").selectric('refresh');
+    var selHeight = $(this).parents(".input-cover").find(".selectric-scroll").outerHeight() + 50;
+    if ($(this).parents('.block-add-option').position().top >= 300) {
+        $(this).parents(".input-cover").find('.selectric-items').css('height', '280px');
+        $(this).parents('.block-add-option').css('top', '332px')
+    }else {
+        $(this).parents(".input-cover").find('.selectric-items').css('height', 'auto');
+        $(this).parents('.block-add-option').css('top', selHeight);
+    }
+});
+// add selectric otion
+
+
+
+
 
 
 // Validation by input type
