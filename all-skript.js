@@ -242,6 +242,58 @@ function getRandomInt(min, max) {
 // Модальное окно
 
 
+
+
+// Slick slider init
+function initSlider($sliderClass, $SliderOption) {
+    $($sliderClass + ':not(.slick-slider)').each(function(index, el) {
+        $(el).slick($SliderOption($(this)));
+    });
+}
+function sliderOption($this){
+    return {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        prevArrow: $this.parent().find(".slider-arrow-prev"),
+        nextArrow: $this.parent().find(".slider-arrow-next"),
+    }
+}
+initSlider('.slider-js .items', sliderOption);
+// Slick slider init
+
+
+
+// Slick slider current init
+
+    // <div class="slide-count-wrap">
+    //     <span class="current current-js">01</span>
+    //     <span class="slash">/</span>
+    //     <span class="total total-js">03</span>
+    // </div>
+slider.each(function(index, el) {
+    $(el).on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+        var i = (currentSlide ? currentSlide : 0) + 1,
+            totalSlides = 0,
+            currSlides = 0;
+
+        totalSlides = Math.ceil(slick.slideCount);
+        currSlides = Math.ceil(i);
+        if (currSlides < 10) {
+            currSlides = '0' + currSlides;
+        }
+        if (totalSlides < 10) {
+            totalSlides = '0' + totalSlides;
+        }
+        $(el).closest('.slider').find('.slider__counter--total').text(totalSlides);
+        $(el).closest('.slider').find('.slider__counter--current').text(currSlides);
+        $(el).parent().find('.current-js').text(currSlides);
+        $(el).parent().find('.total-js').text(totalSlides);
+    });
+});
+// Slick slider current init
+
+
+
 // обрезает текст на нужнем количестве строк
 (function($) {
 
