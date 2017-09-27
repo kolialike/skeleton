@@ -598,8 +598,8 @@ input, select, textarea {
   background: transparent;
 }
 
-textarea {
-  resize: vertical;
+input[type="submit"], select {
+  cursor: pointer;
 }
 
 input.disabled, textarea.disabled {
@@ -609,8 +609,12 @@ input.success, textarea.success {
   border-color: green !important;
 }
 
-input[type="submit"], select {
-  cursor: pointer;
+li {
+  list-style: none;
+}
+
+textarea {
+  resize: vertical;
 }
 
 strong {
@@ -631,6 +635,17 @@ svg text {
   font-family: arial;
 }
 
+html {
+  min-height: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 auto;
+}
+
 img {
   margin: auto;
   max-width: 100%;
@@ -644,11 +659,6 @@ a {
 
 a[href^=tel] {
   color: #325a6e;
-}
-
-* {
-  padding: 0;
-  margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5 {
@@ -714,19 +724,6 @@ h5 {
 h6 {
   font-size: 14px;
   line-height: 1.2;
-}
-
-html {
-  min-height: 100%;
-  height: 100%;
-}
-
-li {
-  list-style: none;
-}
-
-input[type='submit'] {
-  cursor: pointer;
 }
 
 .preloader {

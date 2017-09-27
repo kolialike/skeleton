@@ -50,6 +50,8 @@ function getSliderSettings(){
         slidesToScroll: 1
     }
 }
-// $('.slick-my').slick(getSliderSettings());
+// $('.slick-slider-js').each(function(index, el) {
+//       $(this).slick(getSliderSettings());
+// });
 
 
