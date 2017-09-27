@@ -65,7 +65,7 @@ jQuery(function($){
 
 // Возвращает высоту самого высокого div-а
 
-    function maxHeight($blockClass, $height) {
+    function maxHeight($blockClass) {
         var max = 0;
         $($blockClass).each(function() {
             max = Math.max( max, $(this).height() );
@@ -110,7 +110,7 @@ jQuery(function($){
 // фиксированное меню
 
 
-  // Клавиша для перекручивания вверх
+  // Клавиша для перекручивания вверх скролл top
   $(document).ready(function(e) {
     $(".fixtotop").hide(); 
     $(window).scroll(function(e) { 
@@ -127,7 +127,7 @@ jQuery(function($){
     });
     
   });
-  // Клавиша для перекручивания вверх
+  // Клавиша для перекручивания вверх скролл top
 
 
 
