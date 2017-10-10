@@ -635,9 +635,9 @@ $('.btn-add-option').on('click', function(event) {
     };
 
     function checkOnChange($inputclassjs, validate) {
-        $($inputclassjs).on("keyup change blur", function () {
-            var name = $(this).val();
-            if (!validate(name)) {
+        $(document).on("keyup change blur", $inputclassjs, function () {
+            var thisVal = $(this).val();
+            if (!validate(thisVal)) {
                 $(this).addClass('disabled');
                 $(this).removeClass('success');
                 $(this).parents("form").addClass('not-valid');
@@ -790,3 +790,28 @@ $('form').validateInit();
 
 // Validation by plugin End
 
+
+
+
+// перебор цыфр
+function counter() {
+    jQuery('.counter_js').each(function () {
+        var countTo = jQuery(this).attr('data-count');
+        var currentCounter = jQuery(this);
+        jQuery({countNum: jQuery(this).text()}).animate({
+                countNum: countTo
+            },
+            {
+                duration: 5000,
+                easing  : 'swing',
+                step    : function () {
+                    currentCounter.text(Math.floor(this.countNum));
+                },
+                complete: function () {
+                    currentCounter.text(this.countNum);
+                    //alert('finished');
+                }
+            });
+    });
+}
+// перебор цыфр
