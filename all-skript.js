@@ -258,7 +258,7 @@ function sliderOption($this){
         nextArrow: $this.parent().find(".slider-arrow-next"),
     }
 }
-initSlider('.slider-js .items', sliderOption);
+initSlider('.slider-js .items:not(.slick-slider)', sliderOption);
 // Slick slider init
 
 

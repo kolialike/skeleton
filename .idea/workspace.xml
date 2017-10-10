@@ -22,9 +22,11 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="17">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -32,14 +34,14 @@
       <file leaf-file-name="all-skript.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/all-skript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="815" column="1" lean-forward="false" selection-start-line="815" selection-start-column="1" selection-end-line="815" selection-end-column="1" />
+            <state relative-caret-position="334">
+              <caret line="256" column="61" lean-forward="true" selection-start-line="256" selection-start-column="61" selection-end-line="256" selection-end-column="61" />
               <folding>
                 <element signature="e#19#5962#0" expanded="false" />
                 <element signature="e#6345#6859#0" expanded="false" />
                 <element signature="n#!!block;n#copyModals#0" expanded="false" />
                 <element signature="n#!!block;n#getRandomInt#0" expanded="false" />
-                <marker date="1507633420788" expanded="true" signature="11042:14564" ph="{...}" />
+                <marker date="1507639539560" expanded="true" signature="11061:14583" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -176,9 +178,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="y" value="1" />
-    <option name="width" value="1934" />
+    <option name="x" value="5" />
+    <option name="width" value="1932" />
     <option name="height" value="1036" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -197,6 +198,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,7 +236,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -391,19 +392,20 @@
       <workItem from="1506495379005" duration="10945000" />
       <workItem from="1507122089467" duration="3163000" />
       <workItem from="1507534278922" duration="15000" />
-      <workItem from="1507633399904" duration="23000" />
+      <workItem from="1507633399904" duration="97000" />
+      <workItem from="1507639203265" duration="336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81107000" />
+    <option name="totallyTimeSpent" value="81517000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35069817" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35606873" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -651,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,22 +749,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="17">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/all-skript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="815" column="1" lean-forward="false" selection-start-line="815" selection-start-column="1" selection-end-line="815" selection-end-column="1" />
+        <state relative-caret-position="334">
+          <caret line="256" column="61" lean-forward="true" selection-start-line="256" selection-start-column="61" selection-end-line="256" selection-end-column="61" />
           <folding>
             <element signature="e#19#5962#0" expanded="false" />
             <element signature="e#6345#6859#0" expanded="false" />
             <element signature="n#!!block;n#copyModals#0" expanded="false" />
             <element signature="n#!!block;n#getRandomInt#0" expanded="false" />
-            <marker date="1507633420788" expanded="true" signature="11042:14564" ph="{...}" />
+            <marker date="1507639539560" expanded="true" signature="11061:14583" ph="{...}" />
           </folding>
         </state>
       </provider>
