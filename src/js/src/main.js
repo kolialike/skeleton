@@ -1,13 +1,7 @@
-//= jquery-3.2.1.min.js
-//= browser.js
-//= validation-form.js
-//= swiper.jquery.umd.min.js
-//= slick.js
-
-
 $(document).ready(function() {
     InitSlider();
     initBrowser();
+    initTable();
 
 });
 
@@ -21,7 +15,14 @@ $( window ).resize(function() {
 $(window).scroll(function() {
 });
 
+function initTable() {
+    jQuery('.content-rules table tr:first-of-type td').each(function () {
+        var newIndex = jQuery(this).index() + 1;
 
+        jQuery(this).closest('table').find('tr:not(:first-child)')
+            .find('td:nth-child(' + newIndex + ')').attr('data-title', jQuery(this).text());
+    });
+}
 
 function InitSlider() {
     // var swiper = new Swiper('.swiper-container', {

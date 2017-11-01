@@ -198,7 +198,14 @@ $(document).on('click', '[data-modal]', function(e) {
    static_modal = thisId;
    modalBlock.addClass('active');
    $("body").addClass('active-modal');
-    
+
+    $(document).keyup(function(e) {
+        if (e.keyCode === 27  && $('body').hasClass('active-modal')) {
+            modalBlock.removeClass('active');
+            $('body').removeClass('active-modal');
+        }
+    });
+
    $('.modalclose', modalBlock).on('click', function(e) {
        modalBlock.removeClass('active');
        $('body').removeClass('active-modal');
@@ -244,32 +251,34 @@ function getRandomInt(min, max) {
 
 
 
-// Slick slider init
-function initSlider($sliderClass, $SliderOption) {
-    $($sliderClass + ':not(.slick-slider)').each(function(index, el) {
-        $(el).slick($SliderOption($(this)));
-    });
-}
-function sliderOption($this){
-    return {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        prevArrow: $this.parent().find(".slider-arrow-prev"),
-        nextArrow: $this.parent().find(".slider-arrow-next"),
-    }
-}
-initSlider('.slider-js .items', sliderOption);
-// Slick slider init
+// swiper slider init
+$('.full-width-post-gallery-slider-js').each(function(index, el) {
+    var gtop = $(".full-width-post-slider-titles .swiper-container", this);
+    var gtmb = $(".full-width-post-slider .swiper-container", this);
+    var fullWidthPostSliderTitles = new Swiper(gtop, {
 
+    });
+    var fullWidthPostSlider = new Swiper(gtmb, {s
+
+    });
+    fullWidthPostSliderTitles.params.control = fullWidthPostSlider;
+    fullWidthPostSlider.params.control = fullWidthPostSliderTitles;
+    // console.log(mySwiper.params.control);
+    // fullWidthPostSliderTitles.params.control = mySwiper;
+    // mySwiper.params.control = fullWidthPostSliderTitles;
+
+});
+// swiper slider init
 
 
 // Slick slider current init
 
-    // <div class="slide-count-wrap">
-    //     <span class="current current-js">01</span>
-    //     <span class="slash">/</span>
-    //     <span class="total total-js">03</span>
-    // </div>
+// <div class="slide-count-wrap">
+//     <span class="current current-js">01</span>
+//     <span class="slash">/</span>
+//     <span class="total total-js">03</span>
+// </div>
+
 slider.each(function(index, el) {
     $(el).on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
         var i = (currentSlide ? currentSlide : 0) + 1,
@@ -290,7 +299,53 @@ slider.each(function(index, el) {
         $(el).parent().find('.total-js').text(totalSlides);
     });
 });
+
 // Slick slider current init
+// Slick slider init
+
+function initSlider($sliderClass, $SliderOption) {
+    $($sliderClass + ':not(.slick-slider)').each(function(index, el) {
+        $(el).slick($SliderOption($(this)));
+    });
+}
+function sliderOption($this){
+    return {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        prevArrow: $this.parent().find(".slider-arrow-prev"),
+        nextArrow: $this.parent().find(".slider-arrow-next"),
+    }
+}
+
+initSlider('.slider-js .items', sliderOption);
+var dotsForAllSlider = $('.slick-slider');
+dotsForAllSlider.each(function(index, el) {
+    var sliderAllSlides;
+    var sliderOption;
+    sliderAllSlides = $(el).slick('getSlick').slideCount;
+    sliderOption = $(el).slick("slickGetOption", "slidesToShow");
+
+    if(sliderAllSlides <= sliderOption){
+        $('.slick-dots').parent().addClass("dots-hide");
+    }else{
+        $('.slick-dots').parent().removeClass("dots-hide");
+    }
+
+    $(window).resize(function(event) {
+        sliderAllSlides = $(el).slick('getSlick').slideCount;
+        sliderOption = $(el).slick("slickGetOption", "slidesToShow");
+        if(sliderAllSlides <= sliderOption){
+            $('.slick-dots').parent().addClass("dots-hide");
+        }else{
+            $('.slick-dots').parent().removeClass("dots-hide");
+        }
+    });
+});
+// Slick slider init
+
+
+
+
 
 
 
@@ -406,25 +461,13 @@ jQuery(function($) {
 
 // таблица
 function initTable() {
-    var table = jQuery('.single-page table');
-
-    table.find('td')
-        .mouseout(function () {
-            table.attr('class', jQuery('div').attr('class').replace(/\highlight.*?\b/g, ''));
-        })
-        .mouseover(function () {
-            var index = jQuery(this).index() + 1;
-            if (table.find('td:nth-of-type(' + index + '):hover').length != 0) {
-                table.addClass('highlight-' + index + '');
-            }
-        });
-
     jQuery('.content-rules table tr:first-of-type td').each(function () {
         var newIndex = jQuery(this).index() + 1;
 
         jQuery(this).closest('table').find('tr:not(:first-child)')
             .find('td:nth-child(' + newIndex + ')').attr('data-title', jQuery(this).text());
     });
+
 
 }
 // таблица

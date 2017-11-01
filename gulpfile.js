@@ -2,7 +2,8 @@ var path = {
     src: {
         dir: 'src/',
         fonts: 'src/fonts/**/*.{eot,ttf,woff,woff2,svg}',
-        js: 'src/js/main.js',
+        js: 'src/js/src/list.js',
+        vendorJS: 'src/js/vendorJS/list.js',
         sass: 'src/sass/*.{sass,scss}',
         images: 'src/img/**/*.{jpg,png,gif,svg}',
         html: 'src/html/*.html'
@@ -10,7 +11,8 @@ var path = {
 
     watch: {
         fonts: 'src/fonts/**/*.{eot,ttf,woff,woff2,svg}',
-        js: 'src/js/**/*.js',
+        vendorJS: 'src/js/vendorJS/**/*.js',
+        js: 'src/js/src/**/*.js',
         sass: 'src/sass/**/*.{sass,scss}',
         html: 'src/html/**/*.html',
         images: 'src/img/**/*.{jpg,png,gif,svg}'
@@ -112,6 +114,22 @@ gulp.task('images:build', function () {
 // });
 
 
+gulp.task('vendorJS:build', function () {
+    return gulp.src(path.src.vendorJS)
+        .pipe(plumber({
+            errorHandler: function (error) {
+                console.log(error.message);
+                this.emit('end');
+            }
+        }))
+        .pipe(debug({title: 'vendor js:'}))
+        .pipe(rigger())
+        // .pipe(uglify())
+        .pipe(concat('vendorJS.min.js'))
+        .pipe(gulp.dest(path.build.js))
+        .pipe(connect.reload());
+});
+
 gulp.task('js:build', function () {
     return gulp.src(path.src.js)
         .pipe(plumber({
@@ -123,9 +141,9 @@ gulp.task('js:build', function () {
         .pipe(debug({title: 'js:'}))
         .pipe(rigger())
         // .pipe(uglify())
+        .pipe(concat('main.min.js'))
         .pipe(gulp.dest(path.build.js))
         .pipe(connect.reload());
-    ;
 });
 
 gulp.task('sass:build', function () {
@@ -143,7 +161,7 @@ gulp.task('sass:build', function () {
             image: 'src/img',
             font: 'src/fonts'
         }))
-        // .pipe(cssmin())
+        .pipe(cssmin())
         .pipe(gulp.dest(path.build.css))
         .pipe(connect.reload());
 });
@@ -153,11 +171,11 @@ gulp.task('rebuild', function () {
         'clean',
         'html:build',
         'fonts:build',
-        'images:build',
-        // 'Iconfont:build',
+        'vendorJS:build',
         'js:build',
         'sass:build',
         'images:build',
+        // 'Iconfont:build',
         function () {
             console.log('project is ' + colors.green.underline('rebuild'));
         }
@@ -176,6 +194,10 @@ gulp.task('watch', function () {
 
     watch([path.watch.fonts], function () {
         gulp.start('fonts:build');
+    });
+
+    watch([path.watch.vendorJS], function () {
+        gulp.start('vendorJS:build');
     });
 
     watch([path.watch.js], function () {

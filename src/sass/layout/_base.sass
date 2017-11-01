@@ -1,17 +1,178 @@
 .wrapper
-  position: relative
-  max-width: 1270px
-  min-width: 320px
-  margin: auto
-  padding: 0 20px
-  box-sizing: border-box
-  width: 100%
-  +breakpoint(767px)
-    padding: 0 10px
+	position: relative
+	max-width: $wrapper-outer
+	min-width: 320px
+	margin: auto
+	padding: $wrapper-padding
+	box-sizing: border-box
+	width: 100%
+	+breakpoint(767px)
+		padding: 0 10px
 
 .global-wrapper
-  width: 100%
-  min-width: 320px
-  min-height: 100%
-  
-  
+	width: 100%
+	min-width: 320px
+	min-height: 100%
+
+.full-width-block
+	display: block
+	position: relative
+	max-width: 100vw
+	z-index: 3
+	width: 100vw
+	left: 50%
+	transform: translate(-50%, 0)
+
+.os-windows
+	.full-width-block
+		max-width: calc(100vw - 15px)
+		
+body
+	-webkit-text-size-adjust: 100%
+	-webkit-font-smoothing: antialiased
+	min-height: 100%
+	height: 100%
+	word-break: break-word
+	word-wrap: break-word
+	color: $text-clr
+	font-family: $mainFont
+	font-size: $default-font-size
+	line-height: $default-line-height
+	letter-spacing: 0.04em
+	background-color: $body-clr
+
+.hide
+	display: none !important
+svg
+	text
+		font-family: $mainFont
+
+html
+	min-height: 100%
+	height: 100%
+	margin: 0 !important
+	padding: 0 !important
+	
+.content-rules
+	word-break: break-word
+	word-wrap: break-word
+	color: $text-clr
+	font-family: $mainFont
+	font-size: $default-font-size
+	line-height: $default-line-height
+	hr
+		display: block
+		height: 1px
+		background: $text-clr
+		border: none
+		outline: none
+		margin: $default-margin 0
+		padding: 0
+	
+	p
+		margin-bottom: $default-margin
+	sup, sub
+		font-size: 75%
+		line-height: 0
+		position: relative
+		vertical-align: baseline
+	sup
+		top: -0.5em
+	sub
+		bottom: -0.25em
+	dl
+		display: flex
+	dt
+		font-weight: 700
+	dd
+		margin-left: 20px
+	pre
+		white-space: normal
+	p,
+	em
+		display: block
+		+breakpoint(1023px)
+			font-size: 15px
+			line-height: 22px
+		+breakpoint(760px)
+			font-size: 14px
+			line-height: 20px
+		em
+			display: inline-block
+		a
+			color: #fb0207
+			border-bottom: 1px solid #fb0207
+			&:hover
+				border-bottom: 1px solid transparent
+	.alignnone
+		margin: $default-line-height 0
+	
+	.aligncenter
+		display: block
+		margin: $default-line-height auto
+		clear: both
+	
+	.alignright
+		float: right
+		clear: right
+		margin: $default-line-height 0 $default-line-height $default-line-height
+	
+	.alignleft
+		float: left
+		clear: left
+		margin: $default-line-height $default-line-height $default-line-height 0
+	
+	img.alignnone
+		display: inline-block
+		vertical-align: middle
+	table
+		width: 100%
+		border-collapse: collapse
+		//border: 1px solid #eee
+		margin: 30px 0
+		td
+			padding: 2vw
+			width: 20%
+			line-height: 1.5
+			border: 1px solid #eaeaea
+			+breakpoint(760px)
+				display: block
+				width: 100%
+				padding: 10px 20px
+		tr:nth-child(odd)
+			background: #F6F6FF
+		tr
+			padding: 20px 0
+			
+	ul, ol
+		margin: 25px 0
+		display: block
+		width: 100%
+		li
+			position: relative
+			margin-bottom: 15px
+			font-size: 18px
+			line-height: 30px
+			font-weight: 400
+			letter-spacing: 0px
+	ul
+		li
+			list-style: none
+			padding-left: 15px
+			&:before
+				content: ''
+				position: absolute
+				width: 5px
+				height: 5px
+				border-radius: 50%
+				background: #000
+				top: 11px
+				left: 0
+	ol
+		list-style: decimal inside
+		li
+			list-style: unset
+	
+	
+	
+	
