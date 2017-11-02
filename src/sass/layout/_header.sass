@@ -3,27 +3,18 @@
 	position: relative
 	width: 250px
 	height: 205px
-	margin: 0 .5em
-	background-image: url(http://placekitten.com/250/205)
 	background-position: 100% 0px
-	border-radius: 1em
 	overflow: hidden
-	text-align: left
-	background-clip: content-box
-	background-color: #9dffa9
-	background-blend-mode: multiply
-	&:after
+	.effect
 		content: ""
 		position: absolute
-		width: 100%
-		top: 0
-		bottom: 0
-		left: 0
-		background-image: url(http://placekitten.com/250/205)
-		background-size: cover
-		background-color: red
-		background-blend-mode: multiply
-		-webkit-clip-path: polygon(33% 0, 53% 45%, 78% 100%, 48% 100%, 25% 50%, 0% 0%)
-		clip-path: polygon(33% 0, 53% 45%, 78% 100%, 48% 100%, 25% 50%, 0% 0%)
+		width: 50px
+		height: 150%
+		transform: rotate(45deg)
+		top: -40px
+		right: 50px
+		background: #2650ff
+		mix-blend-mode: multiply
+		
 
 		
