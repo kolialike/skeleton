@@ -132,45 +132,87 @@ jQuery(function($){
 
 
 // Фиксированый блок по отношению к контенту
-  $(document).ready(function(e) {
+    function initBannerSmallSticky() {
 
-    var stickySidebar = $('.banner-small-sticky > a');
+        if ($('.sticky-block-js').length) {
+            // var bodyTop = $('body').css('padding-top');
+            // var bodyTopNum = bodyTop.replace(/\D+/g,"");
+            // var headerHeight = $('.header').outerHeight() + +bodyTopNum;
+            var headerHeight = 20;
+            var winWidth = $(window).width();
+            // console.log(headerHeight);
 
-        if (stickySidebar.length > 0) {
-            var stickyHeight = stickySidebar.outerHeight(),
-                sidebarTop = $('.banner-small-sticky').offset().top;
-        }
+            $('.sticky-block-js').each(function () {
+                var widget = $(this),
+                    widgetParent = widget.parent(),
+                    stopwidth = widget.data('stopwidth'),
+                    startwidth = widget.data('startwidth'),
+                    stoppoint = widget.data('stoppoint'),
+                    gapbottom = widget.data('gapbottom'),
+                    gaptop = widget.data('gaptop'),
+                    widgetParentBig = widget.closest('.'+stoppoint),
+                    widgetTop, widgetHeight, widgetParentOffset, widgetBottom;
+                if (!widgetParentBig.length) return;
 
-        $(window).on('scroll', function () {
-            if (stickySidebar.length > 0) {
-                var scrollTop = $(window).scrollTop();
-                if (sidebarTop < scrollTop + 20) {
-                    stickySidebar.css({'top': scrollTop - sidebarTop + 20 , 'position':'absolute'});
+                widget.find('.a-single:first-of-type').addClass("active");
 
-                    // stop the sticky sidebar at the footer to avoid overlapping
-                    var sidebarBottom = stickySidebar.offset().top + stickyHeight,
-                        stickyStop = $('.sidebar-scroll-height').offset().top + $('.sidebar-scroll-height').outerHeight();
-
-                    if (stickyStop < sidebarBottom) {
-                        var singlePreviewHeight = $(".single-preview:not(.single-preview-img)");
-                        var sidebarScrollHeight = $('.sidebar-scroll-height').outerHeight();
-                        var stopPosition;
-                        if($("main").hasClass("single-full")){
-                            stopPosition = sidebarScrollHeight - stickyHeight - singlePreviewHeight - $(".img-fill-subtitle").outerHeight() - 80;
-                        } else{
-                            stopPosition = sidebarScrollHeight - stickyHeight - 20;
+                function setDimensions() {
+                    // widgetTop = widget.offset().top,
+                    widgetTop = widgetParent.offset().top + parseFloat(widgetParent.css('padding-top')),
+                        widgetHeight = widget.outerHeight(),
+                        widgetParentOffset = widgetParent.offset().top,
+                        //widgetBottom = $('.' + stoppoint).offset().top - gapbottom;
+                        widgetBottom = widgetParentBig.outerHeight() + widgetParentBig.offset().top - gapbottom;
+                }
+                function fixWidget() {
+                    // if (widget.closest('.section-post__left-sidebar').length) {
+                    //     console.log(widgetTop + ' ' + widgetHeight + ' ' + widgetParentOffset + ' ' + widgetBottom);
+                    // }
+                    if (winWidth <= startwidth && winWidth > stopwidth) {
+                        if (($(window).scrollTop() > widgetTop - headerHeight - gaptop) && ($(window).scrollTop() < widgetBottom - widgetHeight - headerHeight - gapbottom )) {
+                            widget.removeClass('stopped');
+                            widget.addClass('fixed');
+                            widget.css({'top': headerHeight + 'px', 'padding-top': gaptop + 'px'});
                         }
-                        stickySidebar.css({'top': stopPosition, 'position':'absolute'});
+                        else if ($(window).scrollTop() >= widgetBottom - widgetHeight - headerHeight - gapbottom ) {
+                            widget.removeClass('fixed');
+                            widget.addClass('stopped');
+                            widget.css({'top': widgetBottom - widgetParentOffset - widgetHeight - gapbottom  + 'px'});
+                        }
+                        else {
+                            widget.removeClass('fixed stopped');
+                            widget.css({'top': 0 + 'px', 'padding-top': 0 + 'px'});
+                        }
                     }
-                }
-                else {
-                    stickySidebar.css({'top': '0', 'position':'relative'});
-                }
-            }
-        });
+                    else {
+                        widget.removeClass('fixed stopped');
+                        widget.css({'top': 0 + 'px', 'padding-top': 0 + 'px'});
+                    }
 
-    }, 200);
-});
+                    // Subscribe widget
+                    // $('.discussions-widget.banner-small-sticky.fixed').outerWidth($('.discussions-widget.banner-small-sticky.fixed').closest('.sidebar').width());
+                }
+
+
+                setDimensions();
+                widgetParent.css({'position': 'relative', 'min-height': widgetHeight+gapbottom+gaptop+'px'});
+                fixWidget();
+
+                $(window).scroll(function () {
+                    setDimensions();
+                    fixWidget();
+                });
+
+                $(window).resize(function () {
+                    setDimensions();
+                    fixWidget();
+                    widgetParent.css({'position': 'relative', 'min-height': widgetHeight+gapbottom+gaptop+'px'});
+                });
+            });
+
+
+        }
+    }
 // Фиксированый блок по отношению к контенту
 
 
