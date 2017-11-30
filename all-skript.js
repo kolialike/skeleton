@@ -271,13 +271,13 @@ function getRandomInt(min, max) {
 }
 
   // html  
-  <div class="datamodal" id="id-modal-number">
+  <div class="datamodal" id="id-modal-your">
       <div>
         
       </div>
       <div class="modalclose"></div>
   </div>
-  <a data-modal="id-modal-number" href="#"></a>
+  <a data-modal="id-modal-your" href="#"></a>
 
               // or
 
@@ -346,20 +346,28 @@ slider.each(function(index, el) {
 // Slick slider init
 
 function initSlider($sliderClass, $SliderOption) {
-    $($sliderClass + ':not(.slick-slider)').each(function(index, el) {
-        $(el).slick($SliderOption($(this)));
-    });
+    if($sliderClass.length > 0){
+        $($sliderClass + ':not(.slick-slider)').each(function(index, el) {
+            $(el).slick($SliderOption($(this)));
+        });
+    }
 }
+
 function sliderOption($this){
     return {
         slidesToShow: 2,
         slidesToScroll: 1,
-        prevArrow: $this.parent().find(".slider-arrow-prev"),
-        nextArrow: $this.parent().find(".slider-arrow-next"),
+        prevArrow: $this.parent().find(".slick-arrow-prev"),
+        nextArrow: $this.parent().find(".slick-arrow-next"),
     }
 }
 
+
 initSlider('.slider-js .items', sliderOption);
+
+//что бы убрать дотсы пишем условие
+&& _.slideCount > _.options.slidesToShow
+    // или код
 var dotsForAllSlider = $('.slick-slider');
 dotsForAllSlider.each(function(index, el) {
     var sliderAllSlides;
@@ -383,6 +391,7 @@ dotsForAllSlider.each(function(index, el) {
         }
     });
 });
+
 // Slick slider init
 
 
@@ -900,3 +909,16 @@ function counter() {
     });
 }
 // перебор цыфр
+
+// скролл до елемента
+    $('.anchors-js .item').on('click', function(event) {
+        event.preventDefault();
+        $(this).addClass('active').siblings().removeClass('active');
+        var id = $(this).attr('data-scroll-to');
+        if(id.length > 0){
+            $('body,html').animate({scrollTop: $(id).offset().top - 20}, 800, function () {
+                return false;
+            });
+        }
+    });
+// скролл до елемента
