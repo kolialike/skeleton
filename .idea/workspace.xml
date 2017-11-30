@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e14c44ba-db90-460b-aeca-64cb6a4a6890" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/print.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/screen.css" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/src/animation-plugin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/src/list.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/src/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/src/userDetect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/vendorJS/list.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all-skript.js" afterPath="$PROJECT_DIR$/all-skript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sass/layout/_base.sass" afterPath="$PROJECT_DIR$/src/sass/layout/_base.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sass/layout/_reset.sass" afterPath="$PROJECT_DIR$/src/sass/layout/_reset.sass" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,6 +36,36 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="head.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/html/partials/head.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/js/src/list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/vendorJS/list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="_header.sass" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sass/layout/_header.sass">
           <provider selected="true" editor-type-id="text-editor">
@@ -47,28 +76,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/src/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="all-skript.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="all-skript.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/all-skript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="370" column="22" lean-forward="false" selection-start-line="370" selection-start-column="22" selection-end-line="370" selection-end-column="22" />
+            <state relative-caret-position="238">
+              <caret line="359" column="66" lean-forward="false" selection-start-line="359" selection-start-column="66" selection-end-line="359" selection-end-column="66" />
               <folding>
                 <element signature="e#9357#9790#0" expanded="false" />
                 <element signature="e#9823#9934#0" expanded="false" />
-                <element signature="e#25143#25938#0" expanded="false" />
-                <element signature="e#25965#26450#0" expanded="false" />
-                <element signature="e#26473#26930#0" expanded="false" />
-                <element signature="e#26969#28593#0" expanded="false" />
+                <element signature="e#25180#25975#0" expanded="false" />
+                <element signature="e#26002#26487#0" expanded="false" />
+                <element signature="e#26510#26967#0" expanded="false" />
+                <element signature="e#27006#28630#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -87,7 +106,7 @@
       <file leaf-file-name="_base.sass" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sass/layout/_base.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
+            <state relative-caret-position="391">
               <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
               <folding>
                 <element signature="e#2273#2593#0" expanded="false" />
@@ -102,7 +121,7 @@
       <file leaf-file-name="_reset.sass" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sass/layout/_reset.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="2278">
               <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
               <folding />
             </state>
@@ -190,6 +209,9 @@
         <option value="$PROJECT_DIR$/src/sass/layout/_reset.sass" />
         <option value="$PROJECT_DIR$/src/sass/layout/_base.sass" />
         <option value="$PROJECT_DIR$/all-skript.js" />
+        <option value="$PROJECT_DIR$/assets/js/src/main.js" />
+        <option value="$PROJECT_DIR$/assets/js/vendorJS/list.js" />
+        <option value="$PROJECT_DIR$/assets/js/src/list.js" />
       </list>
     </option>
   </component>
@@ -238,8 +260,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,40 +283,16 @@
             <path>
               <item name="skeleton" type="b2602c69:ProjectViewProjectNode" />
               <item name="skeleton" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="skeleton" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skeleton" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="skeleton" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skeleton" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="skeleton" type="b2602c69:ProjectViewProjectNode" />
               <item name="skeleton" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="skeleton" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skeleton" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="constants" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="skeleton" type="b2602c69:ProjectViewProjectNode" />
-              <item name="skeleton" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="layout" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendorJS" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -304,24 +302,24 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jetsetter" />
     <property name="jsx.switch.disabled" value="true" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\work\skeleton\src\js\src" />
-      <recent name="C:\work\skeleton\src\js\vendorJS" />
-      <recent name="C:\work\skeleton\src\sass\constants" />
-      <recent name="C:\work\skeleton" />
-      <recent name="D:\work\base-skeleton\src\sass\layout" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\work\skeleton\src\js\src" />
       <recent name="C:\work\skeleton\src\js\vendorJS" />
       <recent name="C:\work\skeleton" />
       <recent name="C:\work\skeleton\src\sass\layout" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\work\skeleton\assets\js" />
+      <recent name="C:\work\skeleton\src\js\src" />
+      <recent name="C:\work\skeleton\src\js\vendorJS" />
+      <recent name="C:\work\skeleton\src\sass\constants" />
+      <recent name="C:\work\skeleton" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -496,19 +494,20 @@
       <workItem from="1511951573826" duration="32000" />
       <workItem from="1511951634807" duration="68000" />
       <workItem from="1511956444132" duration="606000" />
-      <workItem from="1512030518932" duration="963000" />
+      <workItem from="1512030518932" duration="4340000" />
+      <workItem from="1512038193811" duration="1113000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119565000" />
+    <option name="totallyTimeSpent" value="124055000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18474758" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19548872" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -542,38 +541,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/vendor/swiper.jquery.umd.min.js" />
-    <entry file="file://$PROJECT_DIR$/build/js/main.js" />
-    <entry file="file://$PROJECT_DIR$/src/js/src/browser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Swiper-3.4.2/Swiper-3.4.2/dist/css/swiper.scss" />
-    <entry file="file://E:/skeleton/assets/src/javascripts/plugins/is_above.js" />
-    <entry file="file://D:/skeleton/assets/src/javascripts/modules/detectTouchSupport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pluginValidation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calendar/assets/js/calendar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/brat-bratan-bratishka.js" />
     <entry file="file://$PROJECT_DIR$/jquery.selectric.with-add-plus.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -686,13 +653,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/vendorJS/slick.js" />
-    <entry file="file://$PROJECT_DIR$/src/html/partials/head.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/vendorJS/list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -796,19 +756,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sass/layout/_reset.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
+        <state relative-caret-position="2278">
           <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
           <folding />
         </state>
@@ -816,7 +766,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sass/layout/_base.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
+        <state relative-caret-position="391">
           <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
           <folding>
             <element signature="e#2273#2593#0" expanded="false" />
@@ -827,18 +777,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/vendorJS/jquery-3.2.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="1" column="1766" lean-forward="false" selection-start-line="1" selection-start-column="1766" selection-end-line="1" selection-end-column="1766" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/all-skript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="370" column="22" lean-forward="false" selection-start-line="370" selection-start-column="22" selection-end-line="370" selection-end-column="22" />
+        <state relative-caret-position="238">
+          <caret line="359" column="66" lean-forward="false" selection-start-line="359" selection-start-column="66" selection-end-line="359" selection-end-column="66" />
           <folding>
             <element signature="e#9357#9790#0" expanded="false" />
             <element signature="e#9823#9934#0" expanded="false" />
-            <element signature="e#25143#25938#0" expanded="false" />
-            <element signature="e#25965#26450#0" expanded="false" />
-            <element signature="e#26473#26930#0" expanded="false" />
-            <element signature="e#26969#28593#0" expanded="false" />
+            <element signature="e#25180#25975#0" expanded="false" />
+            <element signature="e#26002#26487#0" expanded="false" />
+            <element signature="e#26510#26967#0" expanded="false" />
+            <element signature="e#27006#28630#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="18" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="16" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/partials/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/vendorJS/jquery.validate.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="3" column="1064" lean-forward="true" selection-start-line="3" selection-start-column="1064" selection-end-line="3" selection-end-column="1064" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/vendorJS/jquery-3.1.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/vendorJS/validate.options.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/vendorJS/hover-logo-lib.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/vendorJS/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/src/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

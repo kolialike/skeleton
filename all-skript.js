@@ -353,19 +353,19 @@ function initSlider($sliderClass, $SliderOption) {
     }
 }
 
-function sliderOption($this){
+function sliderOption($thisSlider){
     return {
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow: $this.parent().find(".slick-arrow-prev"),
-        nextArrow: $this.parent().find(".slick-arrow-next"),
+        prevArrow: $thisSlider.parent().find(".slick-arrow-prev"),
+        nextArrow: $thisSlider.parent().find(".slick-arrow-next"),
     }
 }
 
 
 initSlider('.slider-js .items', sliderOption);
 
-//что бы убрать дотсы пишем условие
+//что бы убрать дотсы пишем условие find(options.dots)
 && _.slideCount > _.options.slidesToShow
     // или код
 var dotsForAllSlider = $('.slick-slider');
