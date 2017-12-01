@@ -35,12 +35,13 @@ var concat = require('gulp-concat');
 var debug = require('gulp-debug');
 var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
-var compass = require('gulp-compass');
 var rigger = require('gulp-rigger');
-var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 var runSequence = require('run-sequence');
+var sass = require('gulp-sass');
+var sassGlob = require('gulp-sass-glob');
 var colors = require('colors');
+var uglify = require('gulp-uglify');
 var cssmin = require('gulp-minify-css');
 
 var connect = require('gulp-connect');
@@ -148,20 +149,9 @@ gulp.task('js:build', function () {
 
 gulp.task('sass:build', function () {
     return gulp.src(path.src.sass)
-        .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-            }
-        }))
-        .pipe(debug({title: 'sass:'}))
-        .pipe(compass({
-            sass: 'src/sass',
-            css: path.build.css,
-            image: 'src/img',
-            font: 'src/fonts'
-        }))
-        .pipe(cssmin())
+        .pipe(sassGlob())
+        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+        // .pipe(autoprefixer())
         .pipe(gulp.dest(path.build.css))
         .pipe(connect.reload());
 });

@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     InitSlider();
     initBrowser();
     initTable();
@@ -7,12 +7,12 @@ $(document).ready(function() {
 
 
 // resize
-$( window ).resize(function() {
+$(window).resize(function () {
 });
 
 
 // scroll
-$(window).scroll(function() {
+$(window).scroll(function () {
 });
 
 function initTable() {
@@ -56,9 +56,3 @@ function initBrowser() {
         .addClass('browser-' + window.jscd.browser.toLowerCase())
         .attr('data-os-version', window.jscd.osVersion.toLowerCase());
 }
-
-
-
-
-
-

@@ -300,7 +300,7 @@ $('.full-width-post-gallery-slider-js').each(function(index, el) {
     var fullWidthPostSliderTitles = new Swiper(gtop, {
 
     });
-    var fullWidthPostSlider = new Swiper(gtmb, {s
+    var fullWidthPostSlider = new Swiper(gtmb, {
 
     });
     fullWidthPostSliderTitles.params.control = fullWidthPostSlider;
@@ -922,3 +922,45 @@ function counter() {
         }
     });
 // скролл до елемента
+
+
+// разюросать рандомно по кругу итемы
+    var columnistWrap = $('.columnist-cloud');
+    var innerDiv = columnistWrap.find('.img-item');
+    var count = innerDiv.length;
+
+    var minOffsetOdd = 210;
+    var maxOffsetOdd = 260;
+
+    var minOffsetEven = 330;
+    var maxOffsetEven = 350;
+
+    var minWidth = 60;
+    var maxWidth = 150;
+
+
+    innerDiv.each(function (i) {
+
+        if (i % 2 == 1) {
+            $(this).addClass('odd');
+            var randomOffset = Math.floor(Math.random() * (maxOffsetOdd - minOffsetOdd + 1) + minOffsetOdd);
+        } else {
+            $(this).addClass('even');
+            var randomOffset = Math.floor(Math.random() * (maxOffsetEven - minOffsetEven + 1) + minOffsetEven);
+        }
+
+        var width = Math.floor(Math.random() * (maxWidth - minWidth + 1) + minWidth);
+
+        // $(this).attr('data-offset', randomOffset);
+
+        var degree = 360 / count * i;
+
+        $(this).css({
+            'transform': 'rotate(' + degree + 'deg)' + 'translate(' + randomOffset + 'px)' + 'rotate(-' + degree + 'deg)',
+            'width': width + 'px',
+            'height': width + 'px',
+            'left': 'calc(50% - ' + width / 2 + 'px',
+            'top': 'calc(50% - ' + width / 2 + 'px'
+        });
+    });
+// разюросать рандомно по кругу итемы
