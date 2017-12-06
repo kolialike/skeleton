@@ -345,25 +345,62 @@ slider.each(function(index, el) {
 // Slick slider current init
 // Slick slider init
 
-function initSlider($sliderClass, $SliderOption) {
-    if($sliderClass.length > 0){
-        $($sliderClass + ':not(.slick-slider)').each(function(index, el) {
-            $(el).slick($SliderOption($(this)));
-        });
+// function initSlider($sliderClass, $SliderOption) {
+//     if($sliderClass.length > 0){
+//         $($sliderClass + ':not(.slick-slider)').each(function(index, el) {
+//             $(el).slick($SliderOption($(this)));
+//         });
+//     }
+// }
+//
+// function sliderOption($thisSlider){
+//     return {
+//         slidesToShow: 1,
+//         slidesToScroll: 1,
+//         prevArrow: $thisSlider.parent().find(".slick-arrow-prev"),
+//         nextArrow: $thisSlider.parent().find(".slick-arrow-next"),
+//     }
+// }
+//     initSlider('.slider-js .items', sliderOption);
+
+
+    function slick($sliderClass, $SliderOptions) {
+        if ($sliderClass.length > 0) {
+            $($sliderClass + ':not(.slick-slider)').each(function (index, el) {
+                $(el).slick(sliderOption[$SliderOptions]($(this)));
+            });
+        }
     }
-}
 
-function sliderOption($thisSlider){
-    return {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        prevArrow: $thisSlider.parent().find(".slick-arrow-prev"),
-        nextArrow: $thisSlider.parent().find(".slick-arrow-next"),
-    }
-}
+    var sliderOption = {
+        brandSlider: function ($thisSlider) {
+            return {
+                slidesToScroll: 1,
+                slidesToShow: 3,
+                dots: true,
+                prevArrow: $thisSlider.parents('.brand-slider-section').find(".slider-arrow-prev"),
+                nextArrow: $thisSlider.parents('.brand-slider-section').find(".slider-arrow-next"),
+            }
+        },
+        carSlider: function ($thisSlider) {
+            return {
+                slidesToScroll: 1,
+                slidesToShow: 1,
+                centerMode: true,
+                prevArrow: $thisSlider.parent().find(".slider-arrow-prev"),
+                nextArrow: $thisSlider.parent().find(".slider-arrow-next"),
+                dots: true,
+                centerPadding: "0px",
+            }
+        }
+    };
+
+    slick('.car-slider-img_js .items', 'carSlider');
+    slick('.brand-slider_js .items', 'brandSlider');
 
 
-initSlider('.slider-js .items', sliderOption);
+
+
 
 //что бы убрать дотсы пишем условие find(options.dots)
 && _.slideCount > _.options.slidesToShow
