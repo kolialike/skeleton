@@ -1,9 +1,9 @@
-var path = {
+const path = {
     src: {
         dir: 'src/',
         fonts: 'src/fonts/**/*.{eot,ttf,woff,woff2,svg}',
-        js: 'src/js/src/list.js',
-        vendorJS: 'src/js/vendorJS/list.js',
+        js: 'src/js/srcJS/main.js',
+        // vendorJS: 'src/js/vendorJS/list.js',
         sass: 'src/sass/*.{sass,scss}',
         images: 'src/img/**/*.{jpg,png,gif,svg}',
         html: 'src/html/*.html'
@@ -11,8 +11,8 @@ var path = {
 
     watch: {
         fonts: 'src/fonts/**/*.{eot,ttf,woff,woff2,svg}',
-        vendorJS: 'src/js/vendorJS/**/*.js',
-        js: 'src/js/src/**/*.js',
+        // vendorJS: 'src/js/vendorJS/**/*.js',
+        js: 'src/js/srcJS/**/*.js',
         sass: 'src/sass/**/*.{sass,scss}',
         html: 'src/html/**/*.html',
         images: 'src/img/**/*.{jpg,png,gif,svg}'
@@ -28,23 +28,23 @@ var path = {
     }
 };
 
-var gulp = require('gulp');
+const gulp = require('gulp');
 
-var clean = require('gulp-clean');
-var concat = require('gulp-concat');
-var debug = require('gulp-debug');
-var imagemin = require('gulp-imagemin');
-var plumber = require('gulp-plumber');
-var rigger = require('gulp-rigger');
-var watch = require('gulp-watch');
-var runSequence = require('run-sequence');
-var sass = require('gulp-sass');
-var sassGlob = require('gulp-sass-glob');
-var colors = require('colors');
-var uglify = require('gulp-uglify');
-var cssmin = require('gulp-minify-css');
-
-var connect = require('gulp-connect');
+const clean = require('gulp-clean');
+const concat = require('gulp-concat');
+const debug = require('gulp-debug');
+const imagemin = require('gulp-imagemin');
+const plumber = require('gulp-plumber');
+const rigger = require('gulp-rigger');
+const watch = require('gulp-watch');
+const runSequence = require('run-sequence');
+const sass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
+const colors = require('colors');
+const uglify = require('gulp-uglify');
+const cssmin = require('gulp-minify-css');
+const webpack = require('gulp-webpack');
+const connect = require('gulp-connect');
 
 
 gulp.task('connect', function () {
@@ -115,21 +115,21 @@ gulp.task('images:build', function () {
 // });
 
 
-gulp.task('vendorJS:build', function () {
-    return gulp.src(path.src.vendorJS)
-        .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-            }
-        }))
-        .pipe(debug({title: 'vendor js:'}))
-        .pipe(rigger())
-        // .pipe(uglify())
-        .pipe(concat('vendorJS.min.js'))
-        .pipe(gulp.dest(path.build.js))
-        .pipe(connect.reload());
-});
+// gulp.task('vendorJS:build', function () {
+//     return gulp.src(path.src.vendorJS)
+//         .pipe(plumber({
+//             errorHandler: function (error) {
+//                 console.log(error.message);
+//                 this.emit('end');
+//             }
+//         }))
+//         .pipe(debug({title: 'vendor js:'}))
+//         .pipe(rigger())
+//         // .pipe(uglify())
+//         .pipe(concat('vendorJS.min.js'))
+//         .pipe(gulp.dest(path.build.js))
+//         .pipe(connect.reload());
+// });
 
 gulp.task('js:build', function () {
     return gulp.src(path.src.js)
@@ -139,6 +139,7 @@ gulp.task('js:build', function () {
                 this.emit('end');
             }
         }))
+        .pipe(webpack(require('./webpack.config.js')))
         .pipe(debug({title: 'js:'}))
         .pipe(rigger())
         // .pipe(uglify())
@@ -161,7 +162,7 @@ gulp.task('rebuild', function () {
         'clean',
         'html:build',
         'fonts:build',
-        'vendorJS:build',
+        // 'vendorJS:build',
         'js:build',
         'sass:build',
         'images:build',
@@ -186,9 +187,9 @@ gulp.task('watch', function () {
         gulp.start('fonts:build');
     });
 
-    watch([path.watch.vendorJS], function () {
-        gulp.start('vendorJS:build');
-    });
+    // watch([path.watch.vendorJS], function () {
+    //     gulp.start('vendorJS:build');
+    // });
 
     watch([path.watch.js], function () {
         gulp.start('js:build');

@@ -1,3 +1,8 @@
+import $ from 'jquery';
+// import './browser';
+// import './validationForm';
+// import './animationPlugin';
+
 (function ($) {
     "use strict";
     window.mainJS = {
@@ -11,7 +16,6 @@
             $(document).ready(function () {
                 mainJS.InitSlider();
                 mainJS.initTable();
-
             });
 
             // resize
@@ -27,7 +31,7 @@
 
         initTable: function () {
             jQuery('.content-rules table tr:first-of-type td').each(function () {
-                var newIndex = jQuery(this).index() + 1;
+                let newIndex = jQuery(this).index() + 1;
                 jQuery(this).closest('table').find('tr:not(:first-child)')
                     .find('td:nth-child(' + newIndex + ')').attr('data-title', jQuery(this).text());
             });

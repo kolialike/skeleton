@@ -1,26 +1,27 @@
+import $ from 'jquery';
 /**
  * JavaScript Client Detection
  * (C) viazenetti GmbH (Christian Ludwig)
  */
 (function (window) {
     {
-        var unknown = '-';
+        let unknown = '-';
 
         // screen
-        var screenSize = '';
+        let screenSize = '';
         if (screen.width) {
-            width = (screen.width) ? screen.width : '';
-            height = (screen.height) ? screen.height : '';
+            let width = (screen.width) ? screen.width : '';
+            let height = (screen.height) ? screen.height : '';
             screenSize += '' + width + " x " + height;
         }
 
         // browser
-        var nVer = navigator.appVersion;
-        var nAgt = navigator.userAgent;
-        var browser = navigator.appName;
-        var version = '' + parseFloat(navigator.appVersion);
-        var majorVersion = parseInt(navigator.appVersion, 10);
-        var nameOffset, verOffset, ix;
+        let nVer = navigator.appVersion;
+        let nAgt = navigator.userAgent;
+        let browser = navigator.appName;
+        let version = '' + parseFloat(navigator.appVersion);
+        let majorVersion = parseInt(navigator.appVersion, 10);
+        let nameOffset, verOffset, ix;
 
         // Opera
         if ((verOffset = nAgt.indexOf('Opera')) != -1) {
@@ -96,10 +97,10 @@
         }
 
         // mobile version
-        var mobile = /Mobile|mini|Fennec|Android|iP(ad|od|hone)/.test(nVer);
+        let mobile = /Mobile|mini|Fennec|Android|iP(ad|od|hone)/.test(nVer);
 
         // cookie
-        var cookieEnabled = !!(navigator.cookieEnabled);
+        let cookieEnabled = !!(navigator.cookieEnabled);
 
         if (typeof navigator.cookieEnabled == 'undefined' && !cookieEnabled) {
             document.cookie = 'testcookie';
@@ -107,8 +108,8 @@
         }
 
         // system
-        var os = unknown;
-        var clientStrings = [
+        let os = unknown;
+        let clientStrings = [
             {s: 'Windows 10', r: /(Windows 10.0|Windows NT 10.0)/},
             {s: 'Windows 8.1', r: /(Windows 8.1|Windows NT 6.3)/},
             {s: 'Windows 8', r: /(Windows 8|Windows NT 6.2)/},
@@ -136,15 +137,15 @@
             {s: 'OS/2', r: /OS\/2/},
             {s: 'Search Bot', r: /(nuhk|Googlebot|Yammybot|Openbot|Slurp|MSNBot|Ask Jeeves\/Teoma|ia_archiver)/}
         ];
-        for (var id in clientStrings) {
-            var cs = clientStrings[id];
+        for (let id in clientStrings) {
+            let cs = clientStrings[id];
             if (cs.r.test(nAgt)) {
                 os = cs.s;
                 break;
             }
         }
 
-        var osVersion = unknown;
+        let osVersion = unknown;
 
         if (/Windows/.test(os)) {
             osVersion = /Windows (.*)/.exec(os)[1];
@@ -168,9 +169,9 @@
 
         // flash (you'll need to include swfobject)
         /* script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js" */
-        var flashVersion = 'no check';
+        let flashVersion = 'no check';
         if (typeof swfobject != 'undefined') {
-            var fv = swfobject.getFlashPlayerVersion();
+            let fv = swfobject.getFlashPlayerVersion();
             if (fv.major > 0) {
                 flashVersion = fv.major + '.' + fv.minor + ' r' + fv.release;
             }
@@ -178,17 +179,20 @@
                 flashVersion = unknown;
             }
         }
+
+
+        window.jscd = {
+            screen             : screenSize,
+            browser            : browser,
+            browserVersion     : version,
+            browserMajorVersion: majorVersion,
+            mobile             : mobile,
+            os                 : os,
+            osVersion          : osVersion,
+            cookies            : cookieEnabled,
+            flashVersion       : flashVersion
+        };
     }
 
-    window.jscd = {
-        screen             : screenSize,
-        browser            : browser,
-        browserVersion     : version,
-        browserMajorVersion: majorVersion,
-        mobile             : mobile,
-        os                 : os,
-        osVersion          : osVersion,
-        cookies            : cookieEnabled,
-        flashVersion       : flashVersion
-    };
+
 }(window));
