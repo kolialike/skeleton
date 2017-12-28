@@ -1072,3 +1072,55 @@ function counter() {
         }
     });
 // header menu responsive dropdown
+
+
+
+//my-select
+
+// <div class="select-simple with-border select-simple-js">
+//         <div class="label icon-slick-arrow-right current-js"><p>Tiffany Sanders</p>
+//     </div>
+//     <div class="items">
+//         <a class="item selected">Tiffany Sanders</a>
+//     <a class="item">Michael Crabtree</a>
+//     <a class="item">Brenda Radisson</a>
+//     <a class="item">Tony Yeung</a>
+//     <a class="item">Gerry Granderson</a>
+//     </div>
+//     </div>
+
+
+    $(document).on('click', '.select-simple-js .current-js', function (event) {
+        $(this).closest('.select-simple-js').toggleClass("active");
+    });
+    $('.select-simple-js .item').on('click', function (event) {
+        $(this).closest('.select-simple-js').removeClass("active");
+        $(this).addClass("selected").siblings().removeClass("selected");
+        $(this).parents('.select-simple-js').find('.label p').text($(this).text());
+    });
+    $(document).click(function (e) {
+        if (!$(e.target).closest('.select-simple-js').length && $('.select-simple-js').hasClass("active")) {
+            $('.select-simple-js').removeClass("active");
+        }
+    });
+
+//my-select
+
+
+
+
+
+    // initRating: function () {
+    //     $('.rating__button').on('click', function (e) {
+    //         e.preventDefault();
+    //         var $t = $(this), // the clicked star
+    //             $ct = $t.parent(); // the stars container
+    //
+    //         // add .is--active to the user selected star
+    //         $t.siblings().removeClass('is--active').end().toggleClass('is--active');
+    //         // add .has--rating to the rating container, if there's a star selected. remove it if there's no star selected.
+    //         $ct.find('.rating__button.is--active').length ? $ct.addClass('has--rating') : $ct.removeClass('has--rating');
+    //         console.log($(this).data('num'));
+    //         $(this).parents('.rating-block').find('.rating-num').text($(this).data('num'));
+    //     });
+    // },
