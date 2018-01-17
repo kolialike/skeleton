@@ -1,7 +1,8 @@
-import $ from 'jquery';
-// import './browser';
-// import './validationForm';
-// import './animationPlugin';
+import jQuery from "jquery";
+window.$ = window.jQuery = jQuery;
+import './browser';
+import './validationForm';
+import './animationPlugin';
 
 (function ($) {
     "use strict";
